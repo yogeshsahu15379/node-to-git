@@ -33,7 +33,7 @@ const git = simpleGit({
 try{
 simpleGit()
    .add('./*')
-   .commit('first commit!')
+   .commit('last commit!')
    .push('origin', 'main', () => console.log('done'));
 }catch(error){
     console.log(error);
