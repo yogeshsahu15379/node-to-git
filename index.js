@@ -34,7 +34,7 @@ try{
 simpleGit()
    .add('./*')
    .commit('first commit!')
-   .addRemote('origin', 'https://github.com/yogeshsahu15379/node-to-git')
+   .addRemote('origin', 'https://github.com/yogeshsahu15379/node-to-git.git')
    .push(['-u', 'origin', 'master'], () => console.log('done'));
 }catch(error){
     console.log(error);
