@@ -22,7 +22,7 @@ git
     console.error("Error committing changes:", err);
   });
 
-git.push('origin', 'git@github.com:yogeshsahu15379/node-to-git.git')
+git.push('origin', 'main')
   .then(() => {
     console.log('Changes pushed to remote repository.');
   })
