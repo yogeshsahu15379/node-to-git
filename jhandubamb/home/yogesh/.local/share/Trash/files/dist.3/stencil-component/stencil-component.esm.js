@@ -1,1 +1,0 @@
-import{p as a,b as s}from"./p-12a3d976.js";(()=>{const s=import.meta.url,r={};return""!==s&&(r.resourcesUrl=new URL(".",s).href),a(r)})().then((a=>s([["p-6b5690e6",[[0,"our-features"],[0,"main-card",{heading:[1],subHeading:[1,"sub-heading"],colorClass:[1,"color-class"]}]]]],a)));

@@ -1,7 +1,0 @@
-httpClient.article_controller:
-  path: /gettingnews
-  defaults:
-    _controller: \Drupal\httpClient\Controller\ApiController::content
-    _title: title
-  requirements:
-    _permission: 'access content'

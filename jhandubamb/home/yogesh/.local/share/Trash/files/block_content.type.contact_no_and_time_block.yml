@@ -1,8 +1,0 @@
-uuid: b700806d-690b-4c00-9dce-e3f682c610b8
-langcode: en
-status: true
-dependencies: {  }
-id: contact_no_and_time_block
-label: 'contact no and time block'
-revision: 0
-description: ''

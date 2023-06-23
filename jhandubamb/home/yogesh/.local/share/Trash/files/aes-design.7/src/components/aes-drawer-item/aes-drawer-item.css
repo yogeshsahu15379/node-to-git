@@ -1,9 +1,0 @@
-:host {
-  @apply flex items-center w-full h-16 bg-neutrals-gray1 px-4 justify-between;
-}
-.icon-custom {
-  @apply w-6 mr-6;
-}
-.icon-chevron {
-  @apply w-2 text-neutrals-gray1;
-}

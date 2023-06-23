@@ -1,8 +1,0 @@
-uuid: 001ad958-36ce-4bf1-b67b-7769812cc058
-langcode: en
-status: true
-dependencies: {  }
-name: Category
-vid: category
-description: 'menu category'
-weight: 0

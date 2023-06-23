@@ -1,1 +1,0 @@
-import{r as registerInstance,h}from"./index-abd53505.js";var aesLogoCss=":host{display:inline-block}img{height:1.5rem}";var AESLogo=function(){function o(o){registerInstance(this,o)}o.prototype.render=function(){return h("img",{src:this.logo,alt:"this.logo"})};return o}();AESLogo.style=aesLogoCss;export{AESLogo as aes_logo};

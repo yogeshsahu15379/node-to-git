@@ -1,8 +1,0 @@
-uuid: db489a4a-8863-41fb-b9a9-995b364c58bd
-langcode: en
-status: true
-dependencies: {  }
-id: book-a-table
-label: 'Book a table'
-description: ''
-locked: false

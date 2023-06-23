@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-fin project rm -f
-fin project start
-mutagen project start
-mutagen project flush
-fin exec nvm install 14
-fin exec nvm alias default 14
-fin exec npm install

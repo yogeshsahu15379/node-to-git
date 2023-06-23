@@ -1,7 +1,0 @@
-dummy.dummy_form:
-  path: 'dummy-form'
-  defaults:
-    _controller: 'Drupal/dummy/Controller/DummyController::content'
-    _title: 'Dummy form'
-  requirements:
-    _permission: 'access content'

@@ -1,7 +1,0 @@
-@tailwind base;
-
-@import '../../global/_heading.css';
-
-:host {
-  @apply block;
-}
