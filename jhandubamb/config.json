@@ -1,0 +1,25 @@
+{
+  "atoms": [],
+  "molecules": [],
+  "organisms": [
+    {
+      "css": true,
+      "js": true,
+      "component": "article-slider-module",
+      "componentName": "Article slider Module",
+      "format": "drupal",
+      "key": "27120c6b-c133-562c-244f-8f6ea607d3a7",
+      "traits": [
+        {
+          "key": "aaa361c5-b0b6-56eb-791d-72a75a95d2c8",
+          "type": "text_link",
+          "name": "article_slider_module_qsde",
+          "label": "Article slider Module qsde",
+          "defaultValue": "we"
+        }
+      ],
+      "createdAt": "2023-05-07T15:12:32.106Z",
+      "updatedAt": "2023-06-12T12:09:00.944Z"
+    }
+  ]
+}
