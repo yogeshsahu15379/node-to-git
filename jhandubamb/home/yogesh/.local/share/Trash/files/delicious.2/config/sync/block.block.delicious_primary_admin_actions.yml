@@ -1,0 +1,20 @@
+uuid: 03b2033a-f47a-4394-a073-ac5b4d0195e8
+langcode: en
+status: false
+dependencies:
+  theme:
+    - delicious
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: delicious_primary_admin_actions
+theme: delicious
+region: header
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

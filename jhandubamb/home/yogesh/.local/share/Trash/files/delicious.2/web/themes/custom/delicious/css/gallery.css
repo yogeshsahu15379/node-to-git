@@ -1,0 +1,53 @@
+#block-views-block-some-photos-from-our-restaurant-block-1 .view-content{
+    display: grid;
+    grid-template-columns: auto auto auto auto; 
+    margin-top: 50px;
+    width: 98vw;
+    margin: auto;
+}
+#block-views-block-some-photos-from-our-restaurant-block-1{
+    width: 100vw;
+    text-align: center;
+}
+#block-views-block-some-photos-from-our-restaurant-block-1 h2{
+    font-size: 35px;
+    font-family: myfont;
+    font-weight: bold;
+}
+#block-views-block-some-photos-from-our-restaurant-block-1 .view-header{
+    font-size: 18px;
+    margin-bottom: 50px;
+    width: 95vw;
+}
+
+.gallery_image{
+    margin-left: 3px;
+    margin-right: 3px;
+    overflow: hidden;
+    margin-bottom: 6px;
+}
+.gallery_image img{
+transition: all ease-in-out 0.4s;
+overflow: hidden;
+vertical-align: middle;
+}
+.gallery_image:hover img{
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    
+    #block-views-block-some-photos-from-our-restaurant-block-1 .view-content{
+   
+        grid-template-columns: auto auto auto; 
+
+    }
+
+}
+@media screen and (min-width: 0px) and (max-width: 767px){
+    #block-views-block-some-photos-from-our-restaurant-block-1 .view-content{
+   
+        grid-template-columns: auto; 
+
+    }   
+}

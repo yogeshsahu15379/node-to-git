@@ -1,0 +1,16 @@
+:host {
+  @apply block stroke-current fill-current font-light leading-tight font-display;
+}
+
+:host([color='signature-purple1']) {
+  @apply text-signature-purple1;
+}
+:host([color='signature-blue1']) {
+  @apply text-signature-blue1;
+}
+:host([color='signature-aqua1']) {
+  @apply text-signature-aqua1;
+}
+:host([color='signature-green1']) {
+  @apply text-signature-green1;
+}

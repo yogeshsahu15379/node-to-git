@@ -1,0 +1,11 @@
+:host {
+  @apply hidden;
+
+  @screen lg {
+    @apply flex items-center mb-4;
+  }
+}
+
+aes-icon {
+  @apply w-8 h-8 mr-4;
+}

@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "myfont";
+    src: url("Satisfy-Regular.ttf");
+}
+
+#flexslider-1{
+    width: 100vw;
+    height: 100vh;
+    background: none;
+    border: none;
+    position: relative;
+}
+.flex-direction-nav a{
+    width:50px;
+    height: 50px;
+    background-color: rgba(246, 246, 246, 0.486);
+    border-radius: 50%;
+    text-align: center;
+}
+.flex-direction-nav .flex-next{
+    text-align: center;
+    font-family: myfont;
+}
+.flex-direction-nav a::before{
+    font-size: 43px;
+}
+#flexslider-1 img{
+    height: 100vh;
+    object-fit:cover;
+}
+.flex-control-paging li a {
+    width: 46px;
+    height: 5px;
+}
+.flex-control-nav{
+    bottom: 9px;
+    z-index: 3;
+}
+ #hero_section_content::before{
+content: "";
+background-color: black;
+opacity: 0.5;
+z-index: 1;
+width: 100vw;
+height: 100vh;
+display: inline-block;
+position: absolute;
+}
+#hero_section_content{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#hero_section_content .hero_section_content_box{
+    width: 800px;
+    margin: 38vh auto;
+    color: aliceblue;
+    text-align: center;
+    font-size: 18px;
+    z-index: 100;
+    position: relative;
+}
+#hero_section_content .title{
+    font-size: 48px;
+    font-weight: bold;
+    font-family: myfont;
+    animation: 2s anim-lineUp ease-out;
+}
+#hero_section_content .hero_section_content_box a{
+     color: aliceblue;
+}
+#hero_section_content .hero_section_content_links{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    border:2px solid #ffb03b;
+    background: transparent;
+    border-radius: 30px;
+    margin: 0 15px;
+    padding: 12px 30px;
+}
+.button:hover{
+    background-color: #ffb03b;
+    transition: 0.5s;
+}
+
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 767px){
+
+    #hero_section_content .hero_section_content_box{
+        width: 80%;
+    }
+    .button{
+        padding: 12px 20px;
+    }
+
+}

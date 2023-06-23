@@ -1,0 +1,14 @@
+{
+  "baseBranches": ["dev"],
+  "enabledManagers": ["npm"],
+  "extends": ["config:base", ":rebaseStalePrs", ":label(renovate)"],
+  "packageRules": [
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    { "allowedVersions": "<2.0", "matchPackageNames": ["tailwindcss"] }
+  ]
+}

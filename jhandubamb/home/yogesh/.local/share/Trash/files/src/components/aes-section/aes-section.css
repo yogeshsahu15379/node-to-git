@@ -1,0 +1,35 @@
+:host {
+  @apply block py-5 overflow-hidden;
+
+  @screen md {
+    @apply py-5;
+  }
+
+  @screen lg {
+    @apply py-10;
+  }
+
+  &([vertical-padding='large']) {
+    @apply py-24;
+
+    @screen md {
+      @apply py-48;
+    }
+  }
+
+  &([vertical-padding='medium']) {
+    @apply py-12;
+
+    @screen md {
+      @apply py-24;
+    }
+  }
+
+  &([vertical-padding='small']) {
+    @apply py-6;
+
+    @screen md {
+      @apply py-12;
+    }
+  }
+}

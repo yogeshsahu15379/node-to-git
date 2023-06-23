@@ -1,0 +1,8 @@
+uuid: 7ce41a74-8117-4cae-ae24-5bac8dd4499f
+langcode: en
+status: true
+dependencies: {  }
+name: specials
+vid: specials
+description: ''
+weight: 0

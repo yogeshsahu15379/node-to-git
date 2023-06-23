@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+@media (min-width: 768px) {
+
+.title {
+    grid-column-start: 2
+}
+  }
+
+@media (min-width: 768px) {
+
+.links {
+    grid-column-start: 7
+}
+  }
+
+aes-bg {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

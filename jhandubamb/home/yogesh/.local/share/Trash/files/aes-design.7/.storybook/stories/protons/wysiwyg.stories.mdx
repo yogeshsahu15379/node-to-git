@@ -1,0 +1,504 @@
+import { html } from 'lit-html'
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+
+<Meta
+  title="Protons/WYSIWYG"
+  parameters={{
+    viewMode: 'docs',
+  }}
+/>
+
+# WYSIWYG styles
+
+The following styles are globally scoped. This means they are exposed to consuming applications for use in WYSIWYG editors.
+
+## Text
+
+## Default text
+
+Body text does not live in a paragraph and just has the basic font and 1rem size.
+
+<Story name="Basic text">
+  {() => html`
+    <div class="wysiwyg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed bibendum
+      nisi, sit amet fringilla odio. Praesent tempor mollis nulla, ut aliquam
+      arcu maximus ultrices. In ut sem fringilla, auctor elit nec, viverra odio.
+      Phasellus hendrerit nibh eget leo gravida dictum. Nunc malesuada ex eros,
+      ac imperdiet justo consectetur at. Nullam in aliquet nisl. Nunc sodales
+      justo nec augue efficitur, sit amet euismod leo porta. Curabitur id nisl
+      ut sapien posuere condimentum. Suspendisse vitae ante est.
+    </div>
+  `}
+</Story>
+
+## Paragraphs
+
+Paragraphs are a larger font size with bottom margin.
+
+### Body regular
+
+<Story name="Body - Regular">
+  {() => html`
+    <div class="wysiwyg">
+      <p>
+        Lorem ipsum dolor sit amet,
+        <strong>consectetur adipiscing</strong> elit.
+        <em>Nam sed bibendum</em> nisi, sit amet fringilla odio. Praesent tempor
+        mollis nulla, ut aliquam arcu maximus ultrices. In ut sem fringilla,
+        auctor elit nec, viverra odio. Phasellus hendrerit nibh eget leo gravida
+        dictum. Nunc malesuada ex eros, ac imperdiet justo consectetur at.
+        Nullam in aliquet nisl. Nunc sodales justo nec augue efficitur, sit amet
+        euismod leo porta. Curabitur id nisl ut sapien posuere condimentum.
+        Suspendisse vitae ante est. Nunc commodo arcu a diam pellentesque
+        sodales. Ut convallis condimentum leo sit amet sollicitudin. Mauris sed
+        augue tempus, auctor libero eget, auctor risus. Pellentesque et euismod
+        dui.
+      </p>
+      <p>
+        In ut sem fringilla, auctor elit nec, viverra odio. Phasellus hendrerit
+        nibh eget leo gravida dictum. Nunc malesuada ex eros, ac imperdiet justo
+        consectetur at. Nullam in aliquet nisl. Nunc sodales justo nec augue
+        efficitur, sit amet euismod leo porta. Curabitur id nisl ut sapien
+        posuere condimentum.
+      </p>
+      <p>
+        Praesent tempor mollis nulla, ut aliquam arcu maximus ultrices. In ut
+        sem fringilla, auctor elit nec, viverra odio. Phasellus hendrerit nibh
+        eget leo gravida dictum. Nunc malesuada ex eros, ac imperdiet justo
+        consectetur at. Nullam in aliquet nisl. Nunc sodales justo nec augue
+        efficitur, sit amet euismod leo porta.
+      </p>
+    </div>
+  `}
+</Story>
+
+### Body large
+
+<Story name="Body - Large">
+  {() => html`
+    <div class="wysiwyg">
+      <p class="large">
+        Lorem ipsum dolor sit amet,
+        <strong>consectetur adipiscing</strong> elit.
+        <em>Nam sed bibendum</em> nisi, sit amet fringilla odio. Praesent tempor
+        mollis nulla, ut aliquam arcu maximus ultrices. In ut sem fringilla,
+        auctor elit nec, viverra odio. Phasellus hendrerit nibh eget leo gravida
+        dictum. Nunc malesuada ex eros, ac imperdiet justo consectetur at.
+        Nullam in aliquet nisl. Nunc sodales justo nec augue efficitur, sit amet
+        euismod leo porta. Curabitur id nisl ut sapien posuere condimentum.
+        Suspendisse vitae ante est. Nunc commodo arcu a diam pellentesque
+        sodales. Ut convallis condimentum leo sit amet sollicitudin. Mauris sed
+        augue tempus, auctor libero eget, auctor risus. Pellentesque et euismod
+        dui.
+      </p>
+    </div>
+  `}
+</Story>
+
+### Body active callout
+
+<Story name="Body - Active callout">
+  {() => html`
+    <div class="wysiwyg">
+      <p class="active-callout">
+        Lorem ipsum dolor sit amet,
+        <strong>consectetur adipiscing</strong> elit.
+        <em>Nam sed bibendum</em> nisi, sit amet fringilla odio. Praesent tempor
+        mollis nulla, ut aliquam arcu maximus ultrices. In ut sem fringilla,
+        auctor elit nec, viverra odio. Phasellus hendrerit nibh eget leo gravida
+        dictum. Nunc malesuada ex eros, ac imperdiet justo consectetur at.
+        Nullam in aliquet nisl. Nunc sodales justo nec augue efficitur, sit amet
+        euismod leo porta. Curabitur id nisl ut sapien posuere condimentum.
+        Suspendisse vitae ante est. Nunc commodo arcu a diam pellentesque
+        sodales. Ut convallis condimentum leo sit amet sollicitudin. Mauris sed
+        augue tempus, auctor libero eget, auctor risus. Pellentesque et euismod
+        dui.
+      </p>
+    </div>
+  `}
+</Story>
+
+### Body passive callout
+
+<Story name="Body - Passive callout">
+  {() => html`
+    <div class="wysiwyg">
+      <p class="passive-callout">
+        Lorem ipsum dolor sit amet,
+        <strong>consectetur adipiscing</strong> elit.
+        <em>Nam sed bibendum</em> nisi, sit amet fringilla odio. Praesent tempor
+        mollis nulla, ut aliquam arcu maximus ultrices. In ut sem fringilla,
+        auctor elit nec, viverra odio. Phasellus hendrerit nibh eget leo gravida
+        dictum. Nunc malesuada ex eros, ac imperdiet justo consectetur at.
+        Nullam in aliquet nisl. Nunc sodales justo nec augue efficitur, sit amet
+        euismod leo porta. Curabitur id nisl ut sapien posuere condimentum.
+        Suspendisse vitae ante est. Nunc commodo arcu a diam pellentesque
+        sodales. Ut convallis condimentum leo sit amet sollicitudin. Mauris sed
+        augue tempus, auctor libero eget, auctor risus. Pellentesque et euismod
+        dui.
+      </p>
+    </div>
+  `}
+</Story>
+
+## Headings
+
+### Default headings (unstyled)
+
+Headings have no styles applied by default.
+
+<Story name="Headings - Default">
+  {() => html`
+    <div class="wysiwyg">
+      <h1>Default H1 tag.</h1>
+      <h1>Default H2 tag.</h1>
+      <h1>Default H3 tag.</h1>
+      <h1>Default H4 tag.</h1>
+    </div>
+  `}
+</Story>
+
+### Styled headings
+
+The following headings have had appropriate style classes applied.
+
+<Story name="Headings - Styled">
+  {() => html`
+    <div class="wysiwyg">
+      <h1 class="heading heading-1">Heading style 1.</h1>
+      <h1 class="heading heading-2">Heading style 2.</h1>
+      <h1 class="heading heading-3">Heading style 3.</h1>
+      <h1 class="heading heading-4">Heading style 4.</h1>
+    </div>
+  `}
+</Story>
+
+### Headings with stylized text
+
+The following demonstrates wrapping various words with global color classes to colorize within a heading
+
+<Story name="Headings - Colorized">
+  {() => html`
+    <div class="wysiwyg">
+      <h1 class="heading heading-3">
+        <span class="text-signature-aqua1">Arbitrary</span> heading style with
+        <span class="text-signature-purple1">arbitrary words</span> colorized.
+      </h1>
+    </div>
+  `}
+</Story>
+
+### Subheadings
+
+Subheadings are used for "eyebrow" and other decoration text.
+
+<Story name="Subheadings">
+  {() => html`
+    <div class="wysiwyg">
+      <h2 class="subheadline subheadline-1">Subheading style 1</h2>
+      <h2 class="subheadline subheadline-2">Subheading style 2</h2>
+      <h2 class="subheadline subheadline-3">Subheading style 3</h2>
+    </div>
+  `}
+</Story>
+
+## Lists
+
+### Unordered Lists
+
+<Story name="Unordered Lists">
+  {() => html`
+    <div class="wysiwyg">
+      <ul>
+        <li>
+          Contingency plans. We understand that supply chain plays a key role in
+          minimizing the downtime associated with asset failure since unexpected
+          high impact events may have a substantial negative impact on the
+          business. We have adopted guidelines to create contingency plans
+          and/or procedures to identify and respond to incidents and emergency
+          situations and maintain continuous operation of critical assets.
+          Proper mapping of critical suppliers is included as part of the spend
+          analysis activities, and we also identify alternative sources.
+        </li>
+        <li>
+          Inventory & criticality relation. We include criticality assessment
+          for the different assets and parts within inventory as well as proper
+          planning tools to ensure availability and replenishment according to
+          lead times.
+        </li>
+        <li>
+          Asset management. Assessment of supplier performance enables the
+          identification of issues to be addressed via corrective action plans
+          as well as best practices that should be recognized and duplicated.
+        </li>
+      </ul>
+    </div>
+  `}
+</Story>
+
+### Ordered Lists
+
+<Story name="Ordered Lists">
+  {() => html`
+    <div class="wysiwyg">
+      <ol>
+        <li>
+          Safety comes first for our people, our contractors and the individuals
+          in our communities. All work activities worldwide must be conducted in
+          a safe manner that promotes personal health, safety and well-being.
+        </li>
+        <li>All occupational incidents can be prevented.</li>
+        <li>
+          Working safely is a condition of employment, and each person is
+          responsible for their own safety as well as the safety of their
+          teammates and the people in the communities in which we work.
+        </li>
+        <li>
+          All AES people and contractors have the right and obligation to stop
+          work as soon as they identify a situation they believe to be unsafe.
+        </li>
+      </ol>
+    </div>
+  `}
+</Story>
+
+## Links
+
+### Default Links
+
+<Story name="Default Links">
+  {() => html`
+    <div class="wysiwyg">
+      <p>
+        Fugit aliquam quia illo
+        <a href="#example-link">quasi modi modi</a>. Consequatur perferendis cum
+        culpa. Sed esse ratione. Sed inventore et dolores aut dicta praesentium
+        excepturi.
+      </p>
+    </div>
+  `}
+</Story>
+
+### Button Links
+
+<Story name="Button Links">
+  {() => html`
+    <div class="wysiwyg">
+      <p class="p">
+        <a class="btn primary" href="#example-link">Sunt illum</a> enim itaque.
+        Ut assumenda corporis incidunt facere maiores expedita. Eligendi quo
+        aperiam nisi nihil quia ut vel. Nisi maxime ut.
+      </p>
+      <p class="p">
+        Possimus ut nihil. Aut cumque
+        <a class="btn secondary" href="#example-link">laborum</a> aliquam quia
+        cupiditate voluptas. Aut optio cum molestiae. Quibusdam enim quidem.
+      </p>
+    </div>
+  `}
+</Story>
+
+## Images
+
+### Picture
+
+<Story name="Picture">
+  {() => html`<div class="bg-signature-blue1">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="https://picsum.photos/1440/477?blur=2"
+      />
+      <source
+        media="(min-width: 1280px)"
+        srcset="https://picsum.photos/1280/670?blur=2"
+      />
+      <source
+        media="(min-width: 1024px)"
+        srcset="https://picsum.photos/1024/596?blur=2"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="https://picsum.photos/768/477?blur=2"
+      />
+      <source
+        media="(min-width: 640px)"
+        srcset="https://picsum.photos/640/354?blur=2"
+      />
+      <img src="https://picsum.photos/1024/477?blur=2" alt="" />
+    </picture>
+  </div> `}
+</Story>
+
+## Tables
+
+### Table (default)
+
+<Story name="Table (Default)">
+  {() => html`
+    <div class="wysiwyg">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Compensation</th>
+            <th>Financial Audit</th>
+            <th>Innovation & Technology</th>
+            <th>Governance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Jar Morse *</span>
+            </td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Janet Davidson</span>
+            </td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Andrés Gluski</span>
+            </td>
+            <td>—</td>
+            <td>—</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Holly Keller Koeppel</span>
+            </td>
+            <td>Member</td>
+            <td>—</td>
+            <td>Member</td>
+            <td>Chair</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Tarun Khanna</span>
+            </td>
+            <td>—</td>
+            <td>Member</td>
+            <td>Chair</td>
+            <td>Member</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">James Miller</span>
+            </td>
+            <td>—</td>
+            <td>Chair</td>
+            <td>Member</td>
+            <td>Member</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Alain Monié</span>
+            </td>
+            <td>Chair</td>
+            <td>—</td>
+            <td>Member</td>
+            <td>Member</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Moisés Naim</span>
+            </td>
+            <td>—</td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>Member</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Teresa Sebastian</span>
+            </td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Jeffrey Ubben</span>
+            </td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `}
+</Story>
+
+### Table with Footer
+
+<Story name="Table with Footer">
+  {() => html`
+    <div class="wysiwyg">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Compensation</th>
+            <th>Financial Audit</th>
+            <th>Innovation & Technology</th>
+            <th>Governance</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Name</th>
+            <th>Compensation</th>
+            <th>Financial Audit</th>
+            <th>Innovation & Technology</th>
+            <th>Governance</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Jar Morse *</span>
+            </td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Janet Davidson</span>
+            </td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>
+              <span class="text-signature-purple1">Andrés Gluski</span>
+            </td>
+            <td>—</td>
+            <td>—</td>
+            <td>Member</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `}
+</Story>

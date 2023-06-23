@@ -1,0 +1,23 @@
+:host {
+  @apply inline-flex items-center cursor-pointer;
+
+  @screen lg {
+    @apply py-3 px-6 bg-neutrals-white rounded-full;
+  }
+}
+
+aes-icon {
+  @apply w-4 h-4 p-4 -mr-4;
+
+  @screen lg {
+    @apply h-5 w-5 p-0 mr-0;
+  }
+}
+
+slot {
+  @apply hidden;
+
+  @screen lg {
+    @apply inline ml-2 leading-tight;
+  }
+}

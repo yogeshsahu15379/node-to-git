@@ -1,0 +1,44 @@
+@tailwind base;
+
+:host {
+  @apply block;
+}
+
+.trigger {
+  all: unset;
+  @apply cursor-pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.drawer {
+  @apply opacity-0 fixed w-full right-0 top-0 h-full bg-neutrals-white overflow-y-scroll transform translate-x-full transition-all duration-300 z-50;
+  /* @TODO: Tailwindify this box shadow */
+  box-shadow: -4px 0px 48px 2px rgba(0, 0, 0, 0.06);
+
+  @screen md {
+    width: 400px;
+  }
+}
+.drawer__top {
+  @apply flex w-full bg-neutrals-white h-20 justify-end p-4;
+  /* @TODO: Tailwindify this box shadow */
+  box-shadow: -4px 0px 24px 2px rgba(0, 0, 0, 0.06);
+}
+.drawer__close {
+  all: unset;
+  @apply p-2;
+}
+.drawer__close-icon {
+  @apply w-4 h-4 cursor-pointer;
+}
+
+.drawer__content {
+  @apply p-4;
+}
+
+.show {
+  @apply opacity-100 translate-x-0;
+}

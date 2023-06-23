@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+## Run all tests.
+## Usage: test [build|env|fast|slow]
+##   build (or fast) will run tests that do not require a full environment
+##     such as unit, kernel, etc.
+##   env (or slow) will run tests the REQUIRE a full environment
+##     such as behat, functional, etc
+##
+## This runs within the build container so all tools are available.
+#: exec_target = cli
+
+source "$(dirname $0)/.test-helper"
+cd ${PROJECT_ROOT}
+
+set -e
+
+# Ensure xdebug is disabled for speed.
+xdebug off
+
+if [[ "${1}" == "build" || "${1}" == "fast" || -z "${1}" ]]; then
+  # Tests run by the Build CI stage.
+  # No environment is available.
+  bin/test/jest
+fi

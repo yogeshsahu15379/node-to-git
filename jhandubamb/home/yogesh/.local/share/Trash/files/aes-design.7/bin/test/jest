@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+## Run jest tests against the theme.
+#:exec_target = cli
+
+source "$(dirname $0)/.test-helper"
+cd ${PROJECT_ROOT}
+
+set -e
+
+if [[ -e ${DESIGN_PATH}/source ]]; then
+  cd ${DESIGN_PATH}
+
+  printf "$(INFO_SLUG) Running Jest tests...\n"
+  npm run test
+fi

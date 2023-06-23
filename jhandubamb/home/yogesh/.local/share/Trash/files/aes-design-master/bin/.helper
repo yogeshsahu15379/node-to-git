@@ -1,0 +1,144 @@
+#!/bin/bash
+## Helper script used to set working dir and environment.
+#
+# NOTE: This script should be fast and only define global variables
+# and helper functions.  No side effects!
+#
+# Call this at the top of your script files like this:
+#   source "$(dirname $0)/.helper"
+#   cd ${PROJECT_ROOT}
+
+# Only source once
+if [ "$(type -t find-up)" == 'function' ]; then
+  exit
+fi
+
+# Helper to find a file in parent directories.
+# See: https://unix.stackexchange.com/questions/6463/find-searching-in-parent-directories-instead-of-subdirectories
+find-up() {
+  path=$(pwd)
+  while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+    path=${path%/*}
+  done
+  echo "$path"
+}
+
+# Get the top level git directory for project.
+if [[ -z "${PROJECT_ROOT}" ]]; then
+  export PROJECT_ROOT=$(find-up .env)
+fi
+# If PROJECT_ROOT not found, default to current dir.
+export PROJECT_ROOT=${PROJECT_ROOT:-$(pwd)}
+
+# Export environment variables from .env file, skipping comments.
+if [[ -e "${PROJECT_ROOT}/.env" ]]; then
+  export $(grep -v '^#' "${PROJECT_ROOT}/.env" | xargs)
+fi
+
+# Handle projects without a split between design and theme locations.
+export DESIGN_PATH=${DESIGN_PATH:-$THEME_PATH}
+
+# ----------- Helper functions -----------
+
+QUIET=0
+# Function to display commands
+echo_exec() {
+  if [[ $QUIET -eq 0 ]]; then echo "+ \$ $@"; fi
+  "$@"
+}
+
+# XDebug helper functions
+xdebug() {
+  XDEBUG_STATUS=$(${PROJECT_ROOT}/bin/php/ext xdebug "" 2>/dev/null || echo "off")
+  if [[ ! -z "$1" && "${XDEBUG_STATUS}" != "$1" ]]; then
+    echo "Setting xdebug $1"
+    ${PROJECT_ROOT}/bin/php/ext xdebug $1 >/dev/null
+  fi
+}
+
+# Helper to return the top level git directory for project.
+git_root() {
+  printf "$(git rev-parse --show-toplevel 2>/dev/null)"
+}
+
+# Returns the current branch.
+current_branch() {
+  if [ ! -z "$CI_COMMIT_REF_NAME" ]; then
+    # In GitLab, get current branch from CI variable.
+    currentBranch="$CI_COMMIT_REF_NAME"
+  else
+    currentBranch="$(git symbolic-ref HEAD 2>/dev/null)"
+    currentBranch=${currentBranch##refs/heads/}
+  fi
+  printf "${currentBranch}"
+}
+
+# Helper to extract the issue number from the branch name.
+# Pass the branch name as the argument.
+# If no issue number is found, return "NT"
+# Handles both "issue/123-TITLE" and "issue-123-TITLE".
+issue_num() {
+  if [[ "$1" =~ ^[A-Za-z]+[\/-]([0-9]+) ]]; then
+    printf "${BASH_REMATCH[1]}"
+  else
+    printf "NT"
+  fi
+}
+
+# Helper function to convert name (branch or env) to kubernetes name.
+kube_name() {
+  # Kubernetes environment truncates branch to 32 chars,
+  # Converts slashes to hyphens,
+  # Removes trailing punctuation,
+  printf "${1//\//-}" | cut -c 1-32 | sed 's/[-_.]$//'
+}
+
+# Helper to convert branch name into a string.
+# Replace slashes with hypens and convert to lowercase.
+branch_slug() {
+  printf "${branch//\//-}" | tr '[:upper:]' '[:lower:]'
+}
+
+# Helper function to convert branch name into environment name.
+# For example, "issue/123-TITLE" becomes "issue-123".
+# If argument is not given, or is "." then use current branch name.
+env_name() {
+  branch=${1:-.}
+  if [ "$branch" == "." ]; then
+    # Ensure current branch is taken from git root to handle submodules.
+    # since Kube environment always comes from main project repo.
+    branch=$(
+      cd $(git_root)
+      current_branch
+    )
+  fi
+  issueNum=$(issue_num $branch)
+  if [ "$issueNum" != "NT" ]; then
+    printf "issue-${issueNum}"
+  else
+    printf "$(branch_slug $branch)"
+  fi
+}
+
+# Combination of env_name and kube_name to return a Kubernetes release name.
+release_name() {
+  envName=$(env_name $1)
+  printf "${PROJECT_NAME}-$(kube_name $envName)"
+}
+
+# ----------- Colors -----------
+# Used to make script output prettier.
+# Make into functions to add time stamps.
+INFO_SLUG() {
+  printf "\033[33m[INFO] \033[37m"$(date +"%T")"\033[0m"
+}
+
+# Define a timestamp function
+WARN_SLUG() {
+  printf "\033[31m[WARN] \033[37m"$(date +"%T")"\033[0m"
+}
+
+# Normal variables without timestamp.
+# Used to make script output prettier.
+INFO_SLUG="\033[33m[INFO]\033[0m"
+WARN_SLUG="\033[31m[WARN]\033[0m"

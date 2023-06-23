@@ -1,0 +1,21 @@
+uuid: cd174fd5-564e-47d4-9bd6-b65d3e5c1372
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_no_and_time_block
+    - field.storage.block_content.field_opening_time_and_day
+  module:
+    - text
+id: block_content.contact_no_and_time_block.field_opening_time_and_day
+field_name: field_opening_time_and_day
+entity_type: block_content
+bundle: contact_no_and_time_block
+label: 'opening time and day'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,1 @@
+import{r as s,h as o}from"./p-4b51ccc2.js";const r=class{constructor(o){s(this,o)}render(){return o("img",{src:this.logo,alt:"this.logo"})}};r.style=":host{display:inline-block}img{height:1.5rem}";export{r as aes_logo}

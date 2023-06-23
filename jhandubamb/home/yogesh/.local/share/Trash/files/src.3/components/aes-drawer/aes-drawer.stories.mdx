@@ -1,0 +1,131 @@
+import { html } from 'lit-html'
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+import { ifDefined } from 'lit-html/directives/if-defined'
+
+import { IconType } from '../../utils/enums'
+
+<Meta
+  title="Atoms/Drawer"
+  component="aes-drawer"
+  parameters={{
+    viewMode: 'docs',
+  }}
+/>
+
+# The Drawer
+
+The Drawer triggers a styled column to slide out from the right side of the screen. It has 2 slots:
+
+1. `trigger`
+2. `content`
+
+Anything that can fit into a `<button>` element (text, icons, etc) can go into the `trigger` slot. Below is an example of simple text that opens the Drawer. Any content can be placed in the `content` slot. In these examples we're using the Donut, but any other component works just fine.
+
+<Canvas>
+  <Story name="Simple">
+    {() => html`
+      <aes-drawer>
+        <div slot="trigger">Drawer 1 Trigger</div>
+        <div slot="content">
+          <aes-donut percent="80" color="signature-purple1"></aes-donut>
+        </div>
+      </aes-drawer>
+    `}
+  </Story>
+</Canvas>
+
+We can dress up what goes into the `trigger` slot. For instance, here is roughly what a Header menu link looks like. Inspect this story to see the styles added to the markup.
+
+<Canvas>
+  <Story name="Stylized Trigger">
+    {() => html`
+      <aes-drawer>
+        <div slot="trigger" class="flex">
+          <aes-icon class="w-6 h-6 mr-2" icon="globe"></aes-icon>
+          <span>Drawer 2 Trigger</span>
+        </div>
+        <div slot="content">
+          <aes-donut percent="35" color="signature-aqua1"></aes-donut>
+        </div>
+      </aes-drawer>
+    `}
+  </Story>
+</Canvas>
+
+There can be multiple `trigger`s on a page, arranged how you see fit. Just make sure to provide each `trigger`'s content in the appropriate `content` slot. Note that opening a drawer makes all other open drawers on the page close.
+
+<Canvas>
+  <Story name="Multiple">
+    {() => html`
+      <div class="flex">
+        <aes-drawer class="px-4">
+          <div slot="trigger" class="flex">
+            <aes-icon class="w-6 h-6 mr-2" icon="login"></aes-icon>
+            <span>Drawer 1 Trigger</span>
+          </div>
+          <div slot="content">
+            <div class="large mb-6">What would you like to do?</div>
+            <aes-drawer-item
+              icon="${IconType.BILL}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Pay my bill
+            </aes-drawer-item>
+            <aes-drawer-item
+              icon="${IconType.SERVICE}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Start/Stop service
+            </aes-drawer-item>
+            <aes-drawer-item
+              icon="${IconType.OUTAGE}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Report an outage
+            </aes-drawer-item>
+            <aes-drawer-item
+              icon="${IconType.LOGIN}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Login to my account
+            </aes-drawer-item>
+          </div>
+        </aes-drawer>
+        <aes-drawer class="px-4">
+          <div slot="trigger" class="flex">
+            <aes-icon class="w-6 h-6 mr-2" icon="globe"></aes-icon>
+            <span>Drawer 2 Trigger</span>
+          </div>
+          <div slot="content">
+            <div class="large mb-6">Choose your location</div>
+            <aes-drawer-item
+              icon="${IconType.LOGO_RGB}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              El Salvador
+            </aes-drawer-item>
+            <aes-drawer-item
+              icon="${IconType.LOGO_RGB}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Indiana
+            </aes-drawer-item>
+            <aes-drawer-item
+              icon="${IconType.LOGO_RGB}"
+              url="http://google.com"
+              class="mb-2"
+            >
+              Ohio
+            </aes-drawer-item>
+          </div>
+        </aes-drawer>
+      </div>
+    `}
+  </Story>
+</Canvas>

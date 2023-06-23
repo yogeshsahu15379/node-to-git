@@ -1,0 +1,21 @@
+uuid: 9d908a22-d83a-4ebf-8e6f-784de3e567b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__profession
+    - node.type.testimonial
+  module:
+    - text
+id: node.testimonial.field__profession
+field_name: field__profession
+entity_type: node
+bundle: testimonial
+label: ' profession'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

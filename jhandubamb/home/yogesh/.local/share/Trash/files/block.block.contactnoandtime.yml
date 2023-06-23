@@ -1,0 +1,25 @@
+uuid: a1042ff6-8353-4880-af96-2f6d512644e5
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:contact_no_and_time_block:e9bf7962-a13e-453a-aa97-59cef067b7be'
+  module:
+    - block_content
+  theme:
+    - delicious
+id: contactnoandtime
+theme: delicious
+region: secondary_menu
+weight: -13
+provider: null
+plugin: 'block_content:e9bf7962-a13e-453a-aa97-59cef067b7be'
+settings:
+  id: 'block_content:e9bf7962-a13e-453a-aa97-59cef067b7be'
+  label: 'contact no and time'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,40 @@
+:host {
+  @apply block relative;
+}
+
+/* Allows for mousenter to cover the gap from menu item to dropdown */
+.content-buffer {
+  display: none;
+  @screen lg {
+    @apply absolute pt-3 hidden transform;
+    --transform-translate-x: -4.5rem;
+    top: 100%;
+  }
+}
+/* Actual content block that shows on hover*/
+.content {
+  @apply mt-4 pl-4;
+
+  @screen lg {
+    @apply p-6 pb-8 bg-neutrals-white;
+    min-width: 200px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.06);
+  }
+}
+.trigger {
+  @apply flex items-center justify-between;
+}
+.mobile-caret {
+  @apply w-2;
+  @screen lg {
+    @apply hidden;
+  }
+}
+.caret-open {
+  @apply w-3;
+}
+
+/* Show the content within .content-buffer */
+.show {
+  @apply block;
+}

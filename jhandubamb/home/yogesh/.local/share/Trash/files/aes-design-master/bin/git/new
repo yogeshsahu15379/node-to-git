@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+## Make a new git branch based on ticket number and summary.
+## Runs outside the container but uses 'fin' to rebuild the site.
+## Usage: new [parent]
+##  [parent] can be a different parent branch to base new branch off of.
+
+source "$(dirname $0)/../.helper"
+
+# Ensure git hooks are used.
+if [[ -e "${PROJECT_ROOT}/.hooks" ]]; then
+  git config core.hooksPath .hooks/
+fi
+
+if [[ $(git diff --stat --ignore-submodules) != '' ]]; then
+  printf "$(WARN_SLUG) Please save your current changes with 'git stash/commit' before creating a new branch.\n"
+  exit 0
+fi
+
+currentBranch=$(current_branch)
+# Get optional parent branch from arguments.
+parentBranch=${1:-${currentBranch}}
+
+while [[ ! "$varIssueNum" =~ ^[0-9]+$ && ! "$varIssueNum" =~ ^[nN][tT] ]]; do
+  read -p "Issue number? [NT]/number " varIssueNum
+  varIssueNum=${varIssueNum:-NT}
+done
+read -p "Issue title? " varIssueTitle
+# Convert double quotes to single for storage in git config.
+# Used by git/mr as default title of MR.
+varIssueTitle=$(echo "${varIssueTitle}" | tr '"' "'")
+
+# Determine branch name from the issue title.
+varBranchName=""
+if [[ ! -z "${varIssueTitle}" ]]; then
+  # Branch is lowercase,
+  # Convert remaining slashes to hypens,
+  # Remove non-alphanum chars (but keep spaces and hypens).
+  varBranchName=$(echo "-${varIssueTitle}" | tr '[:upper:]/' '[:lower:]-' | tr -dc '[:alnum:] -')
+fi
+# Convert any spaces left in branch name to hypens.
+newBranch="issue/${varIssueNum}${varBranchName// /-}"
+
+printf "$(INFO_SLUG) Creating a new issue branch from ${parentBranch}...\n"
+echo_exec git pull origin ${parentBranch}
+submodules=$(git submodule status)
+if [ ! -z "${submodules}" ]; then
+  # Ensure submodules are updated
+  echo_exec git submodule sync --recursive
+  echo_exec git submodule update --recursive --remote
+fi
+
+# Ensure on parent branch first
+if [ "${parentBranch}" != "${currentBranch}" ]; then
+  git checkout "${parentBranch}" 2>/dev/null || git checkout -b "${parentBranch}"
+fi
+
+echo_exec git checkout -b ${newBranch}
+# Tag this isssue branch with the parent branch for use in git/mr later.
+git config branch.${newBranch}.parent "${parentBranch}"
+git config branch.${newBranch}.note "${varIssueTitle}"
+
+read -p "Do you want to rebuild local ? [y]/n " varAccept
+varAccept=${varAccept:-y}
+if [[ "${varAccept}" =~ ^[yY] ]]; then
+  fin rebuild
+fi
+
+printf "$(INFO_SLUG) Happy developing!\n"

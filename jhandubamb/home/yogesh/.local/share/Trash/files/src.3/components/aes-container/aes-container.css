@@ -1,0 +1,32 @@
+:host {
+  @apply block mx-auto px-6 max-w-full-screen-w;
+
+  @screen sm {
+    @apply max-w-screen-sm;
+  }
+
+  @screen md {
+    @apply max-w-screen-md;
+  }
+
+  @screen lg {
+    @apply max-w-screen-lg px-10;
+  }
+
+  @screen xl {
+    @apply max-w-screen-xl;
+  }
+
+  @screen xxl {
+    @apply max-w-screen-xxl;
+  }
+}
+
+:host([is-nested='']),
+:host([is-nested='true']) {
+  @apply px-0;
+
+  @screen lg {
+    @apply px-0;
+  }
+}

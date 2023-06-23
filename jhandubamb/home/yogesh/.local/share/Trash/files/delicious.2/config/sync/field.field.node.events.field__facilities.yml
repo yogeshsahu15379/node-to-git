@@ -1,0 +1,21 @@
+uuid: 1fb8052e-dc24-4c75-87e2-d27ba21aea3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field__facilities
+    - node.type.events
+  module:
+    - text
+id: node.events.field__facilities
+field_name: field__facilities
+entity_type: node
+bundle: events
+label: ' facilities'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,30 @@
+uuid: 31b5051b-64be-44ab-a3b4-a47338f9e879
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.why_choose_us.body
+    - node.type.why_choose_us
+  module:
+    - text
+    - user
+id: node.why_choose_us.teaser
+targetEntityType: node
+bundle: why_choose_us
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

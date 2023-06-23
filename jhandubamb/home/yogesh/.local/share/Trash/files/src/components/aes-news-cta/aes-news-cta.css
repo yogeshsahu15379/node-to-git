@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+aes-card {
+  :host([news-type='external']) & {
+    @screen sm {
+      @apply flex-row;
+    }
+  }
+}
+
+div[slot='content'] {
+  :host([news-type='external']) & {
+    @screen sm {
+      @apply ml-5;
+    }
+  }
+}
+
+hr {
+  @apply w-1/3 my-3 ml-0;
+}

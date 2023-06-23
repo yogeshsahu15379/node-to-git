@@ -1,0 +1,10 @@
+dist/
+www/
+loader/
+storybook-static/
+custom-elements.json
+
+# Ignore since eslint is only typescript
+.storybook
+.history/
+package-lock.json

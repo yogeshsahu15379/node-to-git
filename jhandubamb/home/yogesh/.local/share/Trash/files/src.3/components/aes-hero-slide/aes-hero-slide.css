@@ -1,0 +1,9 @@
+:host {
+  @apply block;
+}
+.eyebrow {
+  @apply pb-8;
+}
+.title {
+  @apply pb-20;
+}

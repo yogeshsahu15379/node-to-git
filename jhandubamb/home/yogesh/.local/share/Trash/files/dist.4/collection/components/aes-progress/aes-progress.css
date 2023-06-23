@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  width: 100%;
+  --bg-opacity: 1;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  --bg-opacity: 0.4;
+  border-radius: 9999px;
+  height: 6px;
+}
+
+.value {
+  --bg-opacity: 1;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  border-radius: 9999px;
+  /* transition: width 1s ease-in; */
+}

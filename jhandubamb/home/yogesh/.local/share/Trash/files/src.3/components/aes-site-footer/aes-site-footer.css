@@ -1,0 +1,57 @@
+:host {
+  @apply block bg-neutrals-gray1 py-6;
+
+  @screen lg {
+    @apply pt-12 pb-12;
+  }
+}
+
+::slotted([slot='menus']) {
+  @apply col-span-12;
+
+  @screen md {
+    @apply col-span-6;
+  }
+
+  @screen lg {
+    @apply col-span-3;
+  }
+}
+
+::slotted(p[slot='copyright']) {
+  @apply my-4;
+}
+
+.footer-top {
+  @apply flex items-center justify-between mb-6;
+}
+
+::slotted(aes-menu-accordion) {
+  @apply mb-8;
+
+  @screen md {
+    @apply mb-0;
+  }
+}
+
+.interactions {
+  @apply flex flex-col my-10;
+
+  @screen md {
+    @apply flex-row flex-shrink justify-between items-center;
+  }
+}
+
+slot[name='social-links'] {
+  @apply flex my-10 justify-between;
+
+  @screen md {
+    @apply justify-start my-0;
+  }
+}
+
+::slotted([slot='social-links']) {
+  @screen md {
+    @apply mr-8;
+  }
+}

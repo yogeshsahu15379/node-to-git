@@ -1,0 +1,24 @@
+uuid: cbcc5d01-f5af-4f0f-b043-dbdc23a8065c
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.some_photos_from_our_restaurant
+  module:
+    - views
+  theme:
+    - delicious
+id: views_block__some_photos_from_our_restaurant_block_1
+theme: delicious
+region: content
+weight: -8
+provider: null
+plugin: 'views_block:some_photos_from_our_restaurant-block_1'
+settings:
+  id: 'views_block:some_photos_from_our_restaurant-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

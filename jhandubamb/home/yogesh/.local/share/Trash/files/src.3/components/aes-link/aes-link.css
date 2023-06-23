@@ -1,0 +1,8 @@
+a {
+  @apply no-underline font-body text-signature-blue1 transition-colors duration-300;
+
+  &:visited,
+  &:hover {
+    @apply text-signature-purple1;
+  }
+}

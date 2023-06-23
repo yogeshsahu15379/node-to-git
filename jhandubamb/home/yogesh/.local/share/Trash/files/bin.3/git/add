@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+## Add tracked file changes to commit, without adding submodule commits
+## Runs outside the container.
+
+source "$(dirname $0)/../.helper"
+
+set -e
+
+# Add all changes and deletions, but not un-tracked files.
+echo_exec git add -u
+# Reset any submodules to avoid adding submodule commit to PR.
+echo_exec git submodule --quiet foreach 'cd $toplevel;git reset HEAD $sm_path'
+
+echo_exec git status
+echo "Ready for commit.  Use 'git commit -m \"message\"'"

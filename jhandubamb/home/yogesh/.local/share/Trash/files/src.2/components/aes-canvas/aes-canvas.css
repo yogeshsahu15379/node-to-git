@@ -1,0 +1,252 @@
+:host {
+  @apply flex flex-col;
+}
+
+:host([display-drop-shadow='true']),
+:host([display-drop-shadow='']) {
+  @apply shadow-aes-lg;
+}
+
+:host .outer-wrapper {
+  @apply h-full;
+}
+
+.wrapper {
+  @apply h-full;
+}
+
+:host([display-border='true']) .outer-wrapper,
+:host([display-border='']) .outer-wrapper {
+  @apply border border-solid;
+}
+
+:host(:not([bg-hover-image=''])) .outer-wrapper {
+  @apply relative;
+
+  & aes-bg {
+    @apply relative;
+  }
+
+  &::before {
+    @apply absolute block w-full h-full top-0 left-0 opacity-0 bg-center bg-cover transition-opacity duration-700 ease-out;
+    background-image: var(--bgImage);
+    content: '';
+  }
+
+  & > * {
+    @apply transition-colors duration-300 ease-out;
+  }
+
+  &:hover {
+    &::before {
+      @apply opacity-100;
+    }
+
+    & > * {
+      @apply text-neutrals-white !important;
+    }
+  }
+}
+
+:host([display-border][border-color='neutrals-white']) .outer-wrapper {
+  @apply border-neutrals-white;
+}
+
+:host([display-border][border-color='neutrals-gray1']) .outer-wrapper {
+  @apply border-neutrals-gray1;
+}
+
+:host([display-border][border-color='neutrals-gray2']) .outer-wrapper {
+  @apply border-neutrals-gray2;
+}
+
+:host([display-border][border-color='neutrals-gray3']) .outer-wrapper {
+  @apply border-neutrals-gray3;
+}
+
+:host([display-border][border-color='neutrals-gray4']) .outer-wrapper {
+  @apply border-neutrals-gray4;
+}
+
+:host([display-border][border-color='neutrals-black']) .outer-wrapper {
+  @apply border-neutrals-black;
+}
+
+:host([display-border][border-color='signature-blue1']) .outer-wrapper {
+  @apply border-signature-blue1;
+}
+
+:host([display-border][border-color='signature-blue2']) .outer-wrapper {
+  @apply border-signature-blue2;
+}
+
+:host([display-border][border-color='signature-blue3']) .outer-wrapper {
+  @apply border-signature-blue3;
+}
+
+:host([display-border][border-color='signature-blue4']) .outer-wrapper {
+  @apply border-signature-blue4;
+}
+
+:host([display-border][border-color='signature-purple1']) .outer-wrapper {
+  @apply border-signature-purple1;
+}
+
+:host([display-border][border-color='signature-purple2']) .outer-wrapper {
+  @apply border-signature-purple2;
+}
+
+:host([display-border][border-color='signature-purple3']) .outer-wrapper {
+  @apply border-signature-purple3;
+}
+
+:host([display-border][border-color='signature-purple4']) .outer-wrapper {
+  @apply border-signature-purple4;
+}
+
+:host([display-border][border-color='signature-aqua1']) .outer-wrapper {
+  @apply border-signature-aqua1;
+}
+
+:host([display-border][border-color='signature-aqua2']) .outer-wrapper {
+  @apply border-signature-aqua2;
+}
+
+:host([display-border][border-color='signature-aqua3']) .outer-wrapper {
+  @apply border-signature-aqua3;
+}
+
+:host([display-border][border-color='signature-aqua4']) .outer-wrapper {
+  @apply border-signature-aqua4;
+}
+
+:host([display-border][border-color='signature-green1']) .outer-wrapper {
+  @apply border-signature-green1;
+}
+
+:host([display-border][border-color='signature-green2']) .outer-wrapper {
+  @apply border-signature-green2;
+}
+
+:host([display-border][border-color='signature-green3']) .outer-wrapper {
+  @apply border-signature-green3;
+}
+
+:host([display-border][border-color='signature-green4']) .outer-wrapper {
+  @apply border-signature-green4;
+}
+
+:host([display-border][border-color='ui-error']) .outer-wrapper {
+  @apply border-ui-error;
+}
+
+:host([border-color='transparent']) .outer-wrapper {
+  @apply border-transparent;
+}
+
+aes-bg {
+  @apply h-full;
+}
+
+aes-button {
+  @apply mt-12;
+}
+
+aes-button[variant='arrow-link'] {
+  @apply mt-6;
+}
+
+aes-spacer {
+  @apply flex flex-col justify-between h-full box-border;
+}
+
+/* Css for all Iphone screen start */
+@media only screen and (device-width: 390px) {
+  aes-spacer {
+    height: auto;
+    width: 390px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 375px) {
+  aes-spacer video {
+    height: auto;
+    width: 375px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 750px) {
+  aes-spacer video {
+    height: auto;
+    width: 750px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-height: 812px) {
+  aes-spacer video {
+    height: auto;
+    width: 812px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-height: 844px) {
+  aes-spacer video {
+    height: auto;
+    width: 844px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-height: 926px) {
+  aes-spacer video {
+    height: auto;
+    width: 926px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 428px) {
+  aes-spacer video {
+    height: auto;
+    width: 428px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 736px) {
+  aes-spacer {
+    height: auto;
+    width: 736px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 414px) {
+  aes-spacer {
+    height: auto;
+    width: 414px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 896px) {
+  aes-spacer video {
+    height: auto;
+    width: 896px;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (device-width: 667px) {
+  aes-spacer video {
+    height: auto;
+    width: 667px;
+    max-width: 100%;
+  }
+}
+
+/* Css for all Iphone screen end */

@@ -1,0 +1,116 @@
+#!/usr/bin/env bash
+## Used to create a merge request in GitLab
+## Issue number taken from current issue/* branch.
+## Usage: mr [Description]
+
+source "$(dirname $0)/../.helper"
+
+# Run the lab init script to verify access.
+lab="${PROJECT_ROOT}/bin/git/lab"
+$lab init
+
+parentBranch=$($(dirname $0)/parent)
+currentBranch=$(current_branch)
+
+# Get MR summary from command line arguments by default.
+summary="$@"
+if [ -z "${summary}" ]; then
+  # See if original branch title was saved to config.
+  branchDesc=$(git config --get branch.${currentBranch}.note || echo "")
+  if [[ -z "${branchDesc}" ]]; then
+    # Otherwise default to last commit message.
+    branchDesc=$(git show -s --format='%s')
+  fi
+  echo "Enter title of Merge Request (do not include Issue number or project name)"
+  read -p "> [${branchDesc}] : " summary
+  summary=${summary:-${branchDesc}}
+fi
+
+jiraName=${JIRA_NAME:+${JIRA_NAME}-}
+issueNum=$(issue_num $currentBranch)
+fullSummary=$(echo "${jiraName}${issueNum} : ${summary}" | tr '"' "'")
+
+reply=""
+# Custom `select` implementation that allows *empty* input.
+# Pass the choices as individual arguments.
+# Output is the chosen item, or "", if the user just pressed ENTER.
+# User can select multiple items separated by commas.
+# Example:
+#   choice=$(multiSelectMenu 'one' 'two' 'three')
+# Optional "-p PREFIX" flag given to add PREFIX to the beginning of each selection.
+# Using PREFIX will also add quotes to the selections.
+multiSelectMenu() {
+  local prefix item doPrompt=true i=1 delimiter
+  if [[ "$1" == "-p" ]]; then
+    shift
+    prefix="$1"
+    shift
+  fi
+  local numItems=$#
+
+  # Print numbered menu items.
+  # Cannot use "select" command here, because we want to allow empty input.
+  for item in "$@"; do
+    printf '%s\n' "$i) $item"
+    i=$((i + 1))
+  done >&2 # Print to stderr, as `select` does.
+
+  # Prompt the user for the index of the desired item.
+  while [ $doPrompt = true ]; do
+    doPrompt=false
+    delimiter=""
+    printf %s "${PS3-#? }" >&2 # Print the prompt string to stderr, as `select` does.
+    read -r selection
+    if [[ -z $selection ]]; then break; fi # empty input
+    # Convert comma separated list to array
+    IFS=',' read -r -a selectionArray <<<"${selection}"
+    for index in "${selectionArray[@]}"; do
+      # Make sure that the input is either empty or that a valid index was entered.
+      if [[ $index -lt 1 && $index -gt numItems ]]; then
+        echo "Invalid selection '$index'. Please try again." >&2
+        doPrompt=true
+        continue 2
+      elif [[ -n $index ]]; then
+        # Output the selected item, if any.
+        if [[ -z "$prefix" ]]; then
+          printf %s "${delimiter}${@:index:1}"
+        else
+          printf %s "${delimiter}${prefix} \"${@:index:1}\""
+        fi
+        delimiter=" "
+      fi
+    done
+  done
+}
+
+label=""
+# Add optional labels.
+if [[ ! -z "${GITLAB_LABELS}" ]]; then
+  PS3='Enter any labels that apply (comma separated, <Enter> for none): '
+  # Convert comma separated list of labels into an array.
+  IFS=',' read -r -a gitlabLabels <<<"${GITLAB_LABELS}"
+  opt=$(multiSelectMenu -p "-l" "${gitlabLabels[@]}")
+  label="$label $opt"
+fi
+# If Parent branch is another issue, add a label with parent issue number
+if [[ "${parentBranch}" =~ ^([A-Za-z]+)\/([0-9]+) ]]; then
+  label="$label -l ${BASH_REMATCH[1]}-${BASH_REMATCH[2]}"
+fi
+
+options=""
+# We 'Delete source branch' by default for issues.
+if [[ ${currentBranch} == "issue"* ]]; then
+  options="--remove-source-branch"
+fi
+
+# Create the MR.
+echo "Creating MR against '${parentBranch}'..."
+$lab mr create origin ${parentBranch} ${options} ${label} -m "${fullSummary}"
+
+# Backward compatibility for older projects that used Wunderflow
+if [[ ! -z ${DEVELOP_BRANCH} ]]; then
+  # If DEVELOP_BRANCH is defined, created a 2nd PR for it.
+  developUpper=$(echo ${DEVELOP_BRANCH} | tr '[:lower:]' '[:upper:]')
+  echo "Creating MR against '${DEVELOP_BRANCH}'..."
+  $lab mr create origin ${DEVELOP_BRANCH} ${options} ${label} -m "${developUpper} : ${fullSummary}"
+fi

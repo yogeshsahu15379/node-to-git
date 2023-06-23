@@ -1,0 +1,139 @@
+@layer components {
+  /* All text starts out at 1rem (16px) */
+  body {
+    @apply text-base font-body;
+  }
+
+  a {
+    @apply text-signature-blue1 underline;
+    text-underline-offset: 2px;
+
+    &:active,
+    &:hover {
+      @apply text-signature-purple1;
+    }
+
+    & img {
+      @apply inline-block;
+    }
+  }
+
+  .large {
+    @apply font-body text-xl;
+  }
+
+  /* Ensure paragraph style is reusable */
+  .body-regular {
+    @apply my-3 font-body text-base;
+
+    @screen lg {
+      @apply my-4;
+    }
+  }
+  .body-large {
+    @apply body-regular text-base;
+
+    @screen lg {
+      @apply text-xl;
+    }
+  }
+  .body-active-callout {
+    @apply text-base font-bold;
+
+    @screen lg {
+      @apply text-base;
+    }
+  }
+  .body-passive-callout {
+    @apply text-base italic;
+
+    @screen lg {
+      @apply text-base;
+    }
+  }
+
+  /* Apply paragraph style by default to all p tags */
+  p {
+    @apply body-regular;
+    &.large {
+      @apply body-large;
+    }
+    &.active-callout {
+      @apply body-active-callout;
+    }
+    &.passive-callout {
+      @apply body-passive-callout;
+    }
+  }
+
+  /**
+   * Global heading styles only get margin when wrapped in a .wysiwyg class. We
+   * cannot nest these due to tailwind @apply thinking nested children are
+   * standalone components.
+   */
+  .wysiwyg {
+    & .heading-1 {
+      @apply mb-6;
+      @screen lg {
+        @apply mb-12;
+      }
+    }
+    & .heading-2 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-10;
+      }
+    }
+    & .heading-3 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-8;
+      }
+    }
+    & .heading-4 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-6;
+      }
+    }
+    /* Subheadlines don't change at breakpoints */
+    & .subheadline-1 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-6;
+      }
+    }
+    & .subheadline-2 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-4;
+      }
+    }
+    & .subheadline-3 {
+      @apply mb-4;
+      @screen lg {
+        @apply mb-3;
+      }
+    }
+
+    & ol {
+      @apply aes-list-ordered;
+    }
+
+    & ul {
+      @apply aes-list-unordered;
+    }
+
+    & table {
+      @apply aes-table;
+    }
+
+    & blockquote {
+      @apply my-2 py-2 px-6 bg-neutrals-gray1 rounded-2xl;
+    }
+
+    & span[class*='heading'] img {
+      @apply inline-block;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+sync:
+  defaults:
+    mode: 'two-way-resolved'
+    ignore:
+      # Need the .git folder inside the container for npm issues.
+      vcs: false
+      paths:
+        - '/*.sql' # top level sql backups
+        - '/*.sql.gz' # top level sql backups
+        - 'node_modules' # npm packages
+        - 'dist' # built package
+        - 'www' # built package
+        - '/deploy/'
+        - '.history/' # vsCode local history
+    permissions:
+      defaultFileMode: 644
+      defaultDirectoryMode: 755
+  mySyncSession:
+    alpha: '.'
+    # CHANGE THIS to the name of your project CLI container.
+    beta: 'docker://docker@aes-design_cli_1/var/www'

@@ -1,0 +1,50 @@
+:host {
+  @apply block overflow-visible;
+}
+
+:host([color='neutrals-white']) {
+  @apply bg-neutrals-white;
+}
+
+:host([color='neutrals-gray1']) {
+  @apply bg-neutrals-gray1;
+}
+
+:host([color='neutrals-gray2']) {
+  @apply bg-neutrals-gray2;
+}
+
+:host([color='neutrals-gray3']) {
+  @apply bg-neutrals-gray3;
+}
+
+:host([color='neutrals-gray4']) {
+  @apply bg-neutrals-gray4;
+}
+
+:host([color='neutrals-black']) {
+  @apply bg-neutrals-black;
+}
+
+:host([color='transparent']) {
+  @apply bg-transparent;
+}
+
+:host([image-url][image-position='top-right']) {
+  @apply bg-no-repeat bg-right-top bg-cover;
+  padding-top: 100%;
+
+  @screen md {
+    background-size: calc((7 / 12) * 100%);
+    padding-top: 40%;
+  }
+}
+
+:host([image-url][image-position='bottom']) {
+  @apply bg-no-repeat bg-bottom bg-cover;
+  padding-bottom: 100%;
+
+  @screen md {
+    padding-bottom: 25%;
+  }
+}

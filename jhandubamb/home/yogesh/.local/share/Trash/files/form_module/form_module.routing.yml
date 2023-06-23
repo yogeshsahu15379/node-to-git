@@ -1,0 +1,5 @@
+form_module.reg_form:
+  path: '/form'
+  defaults:
+    _controller: '\Drupal\controller\RegForm::design'
+    _title: 'Registration form'

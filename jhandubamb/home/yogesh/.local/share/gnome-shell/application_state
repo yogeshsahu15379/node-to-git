@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="libreoffice-writer.desktop" score="1" last-seen="1687499087"/>
+    <application id="org.gnome.FileRoller.desktop" score="42.5" last-seen="1687494237"/>
+    <application id="google-chrome.desktop" score="14520.094919418436" last-seen="1687510848"/>
+    <application id="org.gnome.Cheese.desktop" score="5" last-seen="1687431931"/>
+    <application id="org.gnome.eog.desktop" score="6.625" last-seen="1687177936"/>
+    <application id="org.gnome.Nautilus.desktop" score="189.13889021370204" last-seen="1687499089"/>
+    <application id="org.gnome.gedit.desktop" score="44" last-seen="1687499074"/>
+    <application id="update-manager.desktop" score="0" last-seen="1687146192"/>
+    <application id="code_code.desktop" score="13199.459051349175" last-seen="1687510903"/>
+    <application id="mongodb-compass.desktop" score="154.875" last-seen="1687497956"/>
+    <application id="vlc.desktop" score="1654.6875" last-seen="1686108530"/>
+    <application id="slack_slack.desktop" score="8441.6380600971406" last-seen="1687510259"/>
+    <application id="postman_postman.desktop" score="90.273193359375" last-seen="1686892068"/>
+    <application id="org.gnome.Terminal.desktop" score="157.64168146341848" last-seen="1687498587"/>
+    <application id="libreoffice-draw.desktop" score="0" last-seen="0"/>
+    <application id="firefox.desktop" score="21300.435238881611" last-seen="1687503684"/>
+  </context>
+</application-state>

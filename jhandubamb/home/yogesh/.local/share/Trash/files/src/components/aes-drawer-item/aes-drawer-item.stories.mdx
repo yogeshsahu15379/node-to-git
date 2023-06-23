@@ -1,0 +1,146 @@
+import { html } from 'lit-html'
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+import { ifDefined } from 'lit-html/directives/if-defined'
+
+import { IconType } from '../../utils/enums'
+
+<Meta title="Atoms/Drawer Item" component="aes-drawer-item" />
+
+# Drawer items
+
+The links/buttons that show in the Drawer content slot. See [these comps](https://www.figma.com/file/rgt4xGUPIXGhAzJulrLskn/AES?node-id=2487%3A0).
+
+## Full size
+
+The Drawer Item link fills its container.
+
+<Canvas>
+  <Story name="Block">
+    {() => html`
+      <aes-drawer-item
+        icon="${IconType.LOGIN}"
+        url="http://google.com"
+        class="mb-2"
+      >
+        Login to my account
+      </aes-drawer-item>
+      <aes-drawer-item
+        icon="${IconType.LOGO_RGB}"
+        url="http://google.com"
+        class="mb-2"
+      >
+        Ohio
+      </aes-drawer-item>
+    `}
+  </Story>
+</Canvas>
+
+## Contained
+
+Containing the Drawer Item and stacking with simple tailwind classes gives it the look of the designs.
+
+<Canvas>
+  <Story name="Contained">
+    {() => html`
+      <div class="lg:w-2/5">
+        <aes-drawer-item
+          icon="${IconType.BILL}"
+          url="http://google.com"
+          class="mb-2"
+        >
+          Pay my bill
+        </aes-drawer-item>
+        <aes-drawer-item
+          icon="${IconType.SERVICE}"
+          url="http://google.com"
+          class="mb-2"
+        >
+          Start/Stop service
+        </aes-drawer-item>
+        <aes-drawer-item
+          icon="${IconType.OUTAGE}"
+          url="http://google.com"
+          class="mb-2"
+        >
+          Report an outage
+        </aes-drawer-item>
+        <aes-drawer-item
+          icon="${IconType.LOGIN}"
+          url="http://google.com"
+          class="mb-2"
+        >
+          Login to my account
+        </aes-drawer-item>
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+## Contained
+
+Showing multiple items without an icon passed.
+
+<Canvas>
+  <Story name="Without Icon">
+    {() => html`
+      <div class="lg:w-2/5">
+        <aes-drawer-item url="http://google.com" class="mb-2">
+          Pay my bill
+        </aes-drawer-item>
+        <aes-drawer-item url="http://google.com" class="mb-2">
+          Start/Stop service
+        </aes-drawer-item>
+        <aes-drawer-item url="http://google.com" class="mb-2">
+          Report an outage
+        </aes-drawer-item>
+        <aes-drawer-item url="http://google.com" class="mb-2">
+          Login to my account
+        </aes-drawer-item>
+      </div>
+    `}
+  </Story>
+</Canvas>
+
+## Within a Drawer
+
+The designs indicate Drawer Items are mainly used in the Drawer, so click this for placement in a Drawer.
+
+<Canvas>
+  <Story name="Within Drawer">
+    {() => html`
+      <aes-drawer>
+        <button slot="trigger">Open Drawer</button>
+        <div slot="content">
+          <aes-drawer-item
+            icon="${IconType.BILL}"
+            url="http://google.com"
+            class="mb-2"
+          >
+            Pay my bill
+          </aes-drawer-item>
+          <aes-drawer-item
+            icon="${IconType.SERVICE}"
+            url="http://google.com"
+            class="mb-2"
+          >
+            Start/Stop service
+          </aes-drawer-item>
+          <aes-drawer-item
+            icon="${IconType.OUTAGE}"
+            url="http://google.com"
+            class="mb-2"
+          >
+            Report an outage
+          </aes-drawer-item>
+          <aes-drawer-item
+            icon="${IconType.LOGIN}"
+            url="http://google.com"
+            class="mb-2"
+          >
+            Login to my account
+          </aes-drawer-item>
+        </div>
+      </aes-drawer>
+    `}
+  </Story>
+</Canvas>

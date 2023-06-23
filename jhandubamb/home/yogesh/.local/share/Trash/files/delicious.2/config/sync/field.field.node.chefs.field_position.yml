@@ -1,0 +1,21 @@
+uuid: b177ed0c-53a8-4e2b-9eb9-f09e01e126b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position
+    - node.type.chefs
+  module:
+    - text
+id: node.chefs.field_position
+field_name: field_position
+entity_type: node
+bundle: chefs
+label: position
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

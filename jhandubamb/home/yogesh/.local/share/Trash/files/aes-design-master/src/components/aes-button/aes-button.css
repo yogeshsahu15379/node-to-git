@@ -1,0 +1,12 @@
+@tailwind base;
+
+@import '../../global/_button.css';
+
+:host {
+  @apply inline-block;
+}
+
+.arrow {
+  @apply relative w-6 ml-2;
+  top: 3px;
+}

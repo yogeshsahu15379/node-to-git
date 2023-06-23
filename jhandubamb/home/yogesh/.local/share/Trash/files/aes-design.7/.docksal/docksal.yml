@@ -1,0 +1,22 @@
+version: '2.1'
+
+services:
+  cli:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: cli
+    labels:
+      - io.docksal.virtual-host=storybook.${VIRTUAL_HOST}
+      - io.docksal.virtual-port=6007
+    expose:
+      - 6007 # Primary component development.
+
+  web:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: nginx
+    labels:
+      # Set host and port of CLI container for Storybook.
+      - io.docksal.virtual-host=${VIRTUAL_HOST}
+    environment:
+      - NGINX_VHOST_PRESET=html

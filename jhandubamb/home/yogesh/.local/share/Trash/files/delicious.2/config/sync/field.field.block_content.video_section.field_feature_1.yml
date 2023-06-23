@@ -1,0 +1,21 @@
+uuid: f39a1b13-cae9-4976-b101-0045f15bb9bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.video_section
+    - field.storage.block_content.field_feature_1
+  module:
+    - text
+id: block_content.video_section.field_feature_1
+field_name: field_feature_1
+entity_type: block_content
+bundle: video_section
+label: 'feature 1'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

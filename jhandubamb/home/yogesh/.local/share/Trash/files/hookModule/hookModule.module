@@ -1,0 +1,7 @@
+<?php
+
+    function hookModule_form_alter(&$form,\Drupal\core\Form\FormStateInterface $form_state, $form_id){
+        if($form_id== "dummy-form"){
+            $form['actions']['submit']['#value']= t('Feedback');
+        }
+    }

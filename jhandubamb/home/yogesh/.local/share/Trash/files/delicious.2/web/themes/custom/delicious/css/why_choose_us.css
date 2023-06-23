@@ -1,0 +1,80 @@
+#block-views-block-why-choose-our-restourant-block-1 .views-row{
+    width:18vw;
+    height:150px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 80px 30px;
+    transition: all ease-in-out 0.3s;
+    color: #6c665c;
+    position: relative;
+}
+.number{
+    position: absolute;
+    z-index: 1;
+    margin: -30px 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffb03b;
+}
+#block-views-block-why-choose-our-restourant-block-1 .views-row:hover
+{
+
+    background: #ffb03b;
+    padding: 60px 30px 100px 30px;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+    color: #fff;
+  }
+  #block-views-block-why-choose-our-restourant-block-1 .views-row:hover .number{
+    color: #fff;
+  }
+
+  #block-views-block-why-choose-our-restourant-block-1 .view-content{
+
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  
+  }
+  #block-views-block-why-choose-our-restourant-block-1{
+    text-align: center;
+    width: 100vw;
+  }
+  #block-views-block-why-choose-our-restourant-block-1 .views-row{
+    margin: 0 30px 30px 0;
+    text-align: left;
+  }
+  #block-views-block-why-choose-our-restourant-block-1 h2{
+    text-transform: capitalize;
+    font-size: 32px;
+    font-family: myfont;
+    font-weight: 700;
+    /* margin-bottom: 50px; */
+  }
+  .why_choose_us .title{
+    font-size: 24px;
+    font-family: myfont;
+    font-weight: 600;
+    padding: 0;
+    margin: 20px 0;
+  }
+  #block-views-block-why-choose-our-restourant-block-1 .view-header{
+    font-size: 18px;
+    margin-bottom: 40px;
+
+  }
+  /* .view-header */
+  @media screen and (min-width: 0px) and (max-width: 991px){
+
+    #block-views-block-why-choose-our-restourant-block-1 .view-content{
+      grid-template-columns: auto;
+      margin: 0 auto;
+    }
+    #block-views-block-why-choose-our-restourant-block-1 .views-row{
+      width: 85vw;
+      height: 100px;
+      margin: auto;
+    }
+  }
+
+  

@@ -1,0 +1,1 @@
+System.register(["./p-f6446016.system.js"],(function(t){"use strict";var e,r;return{setters:[function(t){e=t.r;r=t.h}],execute:function(){var n=":host{display:inline-block}img{height:1.5rem}";var i=t("aes_logo",function(){function t(t){e(this,t)}t.prototype.render=function(){return r("img",{src:this.logo,alt:"this.logo"})};return t}());i.style=n}}}));

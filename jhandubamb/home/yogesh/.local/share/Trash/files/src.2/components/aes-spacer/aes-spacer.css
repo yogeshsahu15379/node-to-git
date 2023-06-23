@@ -1,0 +1,236 @@
+:host {
+  display: block;
+}
+
+/* Top */
+:host([t='0']) {
+  @apply pt-0;
+}
+:host([t='1']) {
+  @apply pt-1;
+}
+:host([t='2']) {
+  @apply pt-2;
+}
+:host([t='3']) {
+  @apply pt-3;
+}
+:host([t='4']) {
+  @apply pt-4;
+}
+:host([t='5']) {
+  @apply pt-5;
+}
+:host([t='6']) {
+  @apply pt-6;
+}
+:host([t='8']) {
+  @apply pt-8;
+}
+:host([t='10']) {
+  @apply pt-10;
+}
+:host([t='12']) {
+  @apply pt-12;
+}
+:host([t='16']) {
+  @apply pt-16;
+}
+:host([t='20']) {
+  @apply pt-20;
+}
+:host([t='24']) {
+  @apply pt-24;
+}
+:host([t='32']) {
+  @apply pt-32;
+}
+:host([t='40']) {
+  @apply pt-40;
+}
+:host([t='48']) {
+  @apply pt-48;
+}
+:host([t='56']) {
+  @apply pt-56;
+}
+:host([t='64']) {
+  @apply pt-64;
+}
+:host([t='px']) {
+  @apply pt-px;
+}
+/* Right */
+:host([r='0']) {
+  @apply pr-0;
+}
+:host([r='1']) {
+  @apply pr-1;
+}
+:host([r='2']) {
+  @apply pr-2;
+}
+:host([r='3']) {
+  @apply pr-3;
+}
+:host([r='4']) {
+  @apply pr-4;
+}
+:host([r='5']) {
+  @apply pr-5;
+}
+:host([r='6']) {
+  @apply pr-6;
+}
+:host([r='8']) {
+  @apply pr-8;
+}
+:host([r='10']) {
+  @apply pr-10;
+}
+:host([r='12']) {
+  @apply pr-12;
+}
+:host([r='16']) {
+  @apply pr-16;
+}
+:host([r='20']) {
+  @apply pr-20;
+}
+:host([r='24']) {
+  @apply pr-24;
+}
+:host([r='32']) {
+  @apply pr-32;
+}
+:host([r='40']) {
+  @apply pr-40;
+}
+:host([r='48']) {
+  @apply pr-48;
+}
+:host([r='56']) {
+  @apply pr-56;
+}
+:host([r='64']) {
+  @apply pr-64;
+}
+:host([r='px']) {
+  @apply pr-px;
+}
+/* Bottom */
+:host([b='0']) {
+  @apply pb-0;
+}
+:host([b='1']) {
+  @apply pb-1;
+}
+:host([b='2']) {
+  @apply pb-2;
+}
+:host([b='3']) {
+  @apply pb-3;
+}
+:host([b='4']) {
+  @apply pb-4;
+}
+:host([b='5']) {
+  @apply pb-5;
+}
+:host([b='6']) {
+  @apply pb-6;
+}
+:host([b='8']) {
+  @apply pb-8;
+}
+:host([b='10']) {
+  @apply pb-10;
+}
+:host([b='12']) {
+  @apply pb-12;
+}
+:host([b='16']) {
+  @apply pb-16;
+}
+:host([b='20']) {
+  @apply pb-20;
+}
+:host([b='24']) {
+  @apply pb-24;
+}
+:host([b='32']) {
+  @apply pb-32;
+}
+:host([b='40']) {
+  @apply pb-40;
+}
+:host([b='48']) {
+  @apply pb-48;
+}
+:host([b='56']) {
+  @apply pb-56;
+}
+:host([b='64']) {
+  @apply pb-64;
+}
+:host([b='px']) {
+  @apply pb-px;
+}
+/* Left */
+:host([l='0']) {
+  @apply pl-0;
+}
+:host([l='1']) {
+  @apply pl-1;
+}
+:host([l='2']) {
+  @apply pl-2;
+}
+:host([l='3']) {
+  @apply pl-3;
+}
+:host([l='4']) {
+  @apply pl-4;
+}
+:host([l='5']) {
+  @apply pl-5;
+}
+:host([l='6']) {
+  @apply pl-6;
+}
+:host([l='8']) {
+  @apply pl-8;
+}
+:host([l='10']) {
+  @apply pl-10;
+}
+:host([l='12']) {
+  @apply pl-12;
+}
+:host([l='16']) {
+  @apply pl-16;
+}
+:host([l='20']) {
+  @apply pl-20;
+}
+:host([l='24']) {
+  @apply pl-24;
+}
+:host([l='32']) {
+  @apply pl-32;
+}
+:host([l='40']) {
+  @apply pl-40;
+}
+:host([l='48']) {
+  @apply pl-48;
+}
+:host([l='56']) {
+  @apply pl-56;
+}
+:host([l='64']) {
+  @apply pl-64;
+}
+:host([l='px']) {
+  @apply pl-px;
+}

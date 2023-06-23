@@ -1,0 +1,24 @@
+uuid: 2079dd63-1bc4-444a-aee6-f3a8d41dcaad
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.book_a_table
+  module:
+    - views
+  theme:
+    - delicious
+id: views_block__book_a_table_block_1
+theme: delicious
+region: content
+weight: -9
+provider: null
+plugin: 'views_block:book_a_table-block_1'
+settings:
+  id: 'views_block:book_a_table-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

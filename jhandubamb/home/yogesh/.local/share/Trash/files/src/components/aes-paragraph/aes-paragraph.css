@@ -1,0 +1,5 @@
+@apply base;
+
+:host {
+  @apply block font-body text-lg my-4;
+}

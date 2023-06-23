@@ -1,0 +1,25 @@
+uuid: e7e6c9dc-64d4-4c59-b12f-e206f2837c6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact
+  module:
+    - webform
+  theme:
+    - delicious
+id: webform
+theme: delicious
+region: content
+weight: -3
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: contact
+  default_data: ''
+  redirect: false
+visibility: {  }

@@ -1,0 +1,35 @@
+@tailwind base;
+
+:host {
+  display: block;
+}
+.display,
+.item {
+  @apply p-3 cursor-pointer w-56 font-normal;
+}
+
+.display{
+  @apply text-center flex justify-between items-center p-4  bg-neutrals-white shadow-lg rounded-full text-base font-medium;
+}
+
+.custom_select{
+  @apply w-40 ml-6;
+}
+.default_selector,
+.option_section,
+.hide{
+  @apply hidden;
+}
+.show{
+  @apply block absolute translate-y-full transition-all duration-700 text-base font-medium;
+
+}
+.language_selected{
+  @apply font-semibold;
+}
+.option_section{
+  @apply shadow-2xl rounded-lg pt-4 pb-4;
+}
+.display svg{
+  @apply w-3;
+}

@@ -1,0 +1,44 @@
+.site-footer__bottom{
+    width: 99vw;
+    border: none;
+}
+.site-footer__bottom .content{
+    text-align: center;
+}
+.site-footer__bottom .content a{
+    font-size: 35px;
+    font-family: myfont;
+    color:#ffa012;
+    border: none;
+    font-weight: bold;
+}
+.site-footer__bottom .content p{
+    font-size: 15px;
+    color: white;
+}
+.addtoany_list a span{
+    background-color: transparent;
+}
+.addtoany_list svg{
+    background-color: black;
+}
+
+.a2a_s_twitter{
+    background-color: rgb(90, 88, 88);
+width: 24px;
+line-height: 20px;
+height: 25px;
+background-size: 20px;
+border-radius: 50%;
+padding: 9px;
+
+}
+
+.node--type-footer .field--name-field-copyright{
+    margin-top: 20px;
+    color: white;
+}
+
+.node--type-footer .field--name-field-design-by{
+    color: white;
+}

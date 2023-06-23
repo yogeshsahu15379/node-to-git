@@ -1,0 +1,49 @@
+@layer components {
+  .aes-list-base {
+    @apply text-lg font-body leading-normal;
+
+    & li {
+      @apply text-lg font-body leading-normal;
+    }
+
+    & li + li {
+      @apply mt-8;
+    }
+  }
+
+  .aes-list-ordered,
+  .aes-list-unordered {
+    @apply aes-list-base;
+  }
+
+  .aes-list-unordered {
+    @apply p-0;
+
+    & li {
+      @apply relative pl-10;
+
+      &::before {
+        @apply block absolute left-0;
+        content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgIDxwYXRoIGQ9Ik0wIDEwVjhoMjB2MnoiIC8+CiAgICA8cGF0aCBkPSJNMTEuNTg2IDJMMTMgLjU4NiAyMS40MTQgOSAxMyAxNy40MTQgMTEuNTg2IDE2bDctN3oiIC8+CiAgPC9nPgo8L3N2Zz4K);
+        top: 3px;
+      }
+    }
+  }
+
+  .aes-list-ordered {
+    @apply p-0;
+    counter-reset: li;
+
+    & li {
+      @apply relative
+         pl-10;
+      &::before {
+        @apply absolute
+              left-0
+              top-0;
+        counter-increment: li;
+        content: counter(li, decimal-leading-zero) '.';
+      }
+    }
+  }
+}

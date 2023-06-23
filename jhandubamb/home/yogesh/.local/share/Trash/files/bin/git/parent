@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+## Display or set the parent branch of the current branch.
+## Usage: parent [branch]
+##   [branch] can be any string or just the issue number.
+
+source "$(dirname $0)/../.helper"
+
+currentBranch=$(current_branch)
+
+checkBranch() {
+  parentBranch=$(git branch --list "${1}" "*/${1}" "*/${1}-*" | xargs)
+  # Return success if branch does not exist and is NOT the current branch
+  [[ ! -z "${parentBranch}" ]] && [[ "${parentBranch}" != "* ${currentBranch}" ]]
+}
+
+MASTER_BRANCH=${MASTER_BRANCH:-master}
+
+if [ ! -z "$1" ]; then
+  # use the cli argument if it is given
+  parentBranch="$1"
+else
+  # Get the original parent branch from the git config (saved in git/new)
+  parentBranch=$(git config --get branch.${currentBranch}.parent || echo "")
+  if [[ ! -z "${parentBranch}" ]]; then
+    varAccept=y
+  fi
+fi
+
+while [[ ! "${varAccept}" =~ ^[yY] ]]; do
+  while ! checkBranch $parentBranch; do
+    # If no stored parent was found, prompt.
+    read -p "Parent branch name (or epic issue number) [${MASTER_BRANCH}] : " parentBranch
+    parentBranch=${parentBranch:-$MASTER_BRANCH}
+  done
+
+  read -p "Use ${parentBranch} ? [y]/n " varAccept
+  varAccept=${varAccept:-y}
+  if [[ ! "${varAccept}" =~ ^[yY] ]]; then
+    parentBranch=""
+  fi
+done
+
+git config branch.${currentBranch}.parent "${parentBranch}"
+
+# Return the result
+echo "$parentBranch"

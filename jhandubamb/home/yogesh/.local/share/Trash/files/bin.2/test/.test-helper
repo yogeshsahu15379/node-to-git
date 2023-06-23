@@ -1,0 +1,36 @@
+#!/bin/bash
+## Helper script used to set common test environment.
+#
+# Call this at the top of your script files like this:
+#   source "$(dirname $0)/.test-helper"
+#   cd ${PROJECT_ROOT}
+
+# Call the main environment helper
+source "$(dirname $0)/../.helper"
+cd ${PROJECT_ROOT}
+
+if [[ ! $(which npm) && -e "/home/docker" ]]; then
+  # If running as root, ensure docker user profile is loaded.
+  # To allow npm to run.
+  HOME="/home/docker"
+  source "$HOME/.profile"
+fi
+
+#####
+# Now add common functions for Test environments.
+
+# Sets virtual host variables.
+function set_virtual_host {
+  # Set default testing URL for web host.
+  if [[ ! -z "$CI" && -z "$SIMPLETEST_BASE_URL" ]]; then
+    export SIMPLETEST_BASE_URL=http://localhost
+  elif [[ ! -z "${VIRTUAL_HOST}" ]]; then
+    # Use the virtual host if available so debugging urls resolve locally instead of to 'web'.
+    export SIMPLETEST_BASE_URL="http://${VIRTUAL_HOST}"
+  fi
+
+  # Set default ExistingSite test URL for web host.
+  if [[ -z "${DTT_BASE_URL}" ]]; then
+    export DTT_BASE_URL=${SIMPLETEST_BASE_URL}
+  fi
+}

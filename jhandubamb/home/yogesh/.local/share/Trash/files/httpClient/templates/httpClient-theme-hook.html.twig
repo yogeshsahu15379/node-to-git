@@ -1,0 +1,29 @@
+{% for result in data %}
+
+<div class="card">
+   <h1 class="title"> {{ result.title }} </h1>
+   <img src='{{ result.urlToImage }}'>
+   <h1>{{ result.content }}</h1>
+   <h1> {{ result.author }}</h1>
+</div>
+{% endfor %}
+
+
+
+
+
+<style>
+
+    .card{
+        margin: 30px;
+        box-shadow: 0px 2px 5px 5px #e4e4e4;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .title{
+        font-size: 30px;
+        font-weight:bold;
+    }
+
+
+</style>

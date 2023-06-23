@@ -1,0 +1,58 @@
+#block-views-block-testimonials-block-1{
+    width: 100vw;
+    padding: 80px 0;
+    background: linear-gradient(rgba(5, 5, 5, 0.679), rgba(5, 5, 5, 0.679)),url(https://bootstrapmade.com/demo/templates/Delicious/assets/img/testimonials-bg.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+#block-views-block-testimonials-block-1 .content{
+    width: 70%;
+    margin: auto;
+}
+.testimonial_section{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: white;
+
+}
+.testimonial_section_image img{
+    width: 100px;
+border-radius: 50%;
+border: 6px solid rgba(255, 255, 255, 0.15);
+margin: 0 auto;
+}
+.testimonial_section_name{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.testimonial_section_profession{
+    font-size: 14px;
+
+}
+.testimonial_dis{
+    font-size: 15px;
+    color: #eee;
+}
+blockquote{
+    border:none;
+    background-color: transparent;
+}
+blockquote::after,
+blockquote::before{
+    font-size: 4em;
+    color: gray;
+    font-weight: bold;
+}
+
+#stars span{
+    color:rgb(255, 243, 9);
+}
+
+@media screen and(min-width:0px) and (max-width: 767px) {
+    
+    #block-views-block-testimonials-block-1 .content{
+        width: 90vw;
+    }
+}

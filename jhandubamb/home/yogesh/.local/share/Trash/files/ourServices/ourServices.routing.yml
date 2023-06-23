@@ -1,0 +1,7 @@
+ourServices.edit_form:
+  path: /admin/edit/ourservices
+  defaults:
+    _form: \Drupal\ourServices\Form\OurServicesForm
+    _title: services_form
+  requirements:
+    _permission: 'access content'

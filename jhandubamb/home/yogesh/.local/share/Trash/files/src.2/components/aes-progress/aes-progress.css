@@ -1,0 +1,8 @@
+:host {
+  @apply flex w-full bg-neutrals-white bg-opacity-40 rounded-full;
+  height: 6px;
+}
+.value {
+  @apply bg-neutrals-white rounded-full;
+  /* transition: width 1s ease-in; */
+}

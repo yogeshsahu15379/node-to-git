@@ -1,0 +1,1 @@
+import{r,h as s,H as a}from"./p-4b51ccc2.js";const t=class{constructor(s){r(this,s)}render(){return s(a,null,s("slot",null))}};t.style="@apply base; :host{display:block;font-family:neue-haas-grotesk-text, Helvetica, Arial, sans-serif;font-size:1.125rem;margin-top:1rem;margin-bottom:1rem}";export{t as aes_paragraph}

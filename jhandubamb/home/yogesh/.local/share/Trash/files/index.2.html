@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/grapes.min.js"></script>
+    <style>
+      /* Let's highlight canvas boundaries */
+      #gjs {
+        border: 3px solid #444;
+      }
+
+      /* Reset some default styling */
+      .gjs-cv-canvas {
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>GrapesJS</h1>
+    <div id="gjs">
+      <h1>Hello World Component!</h1>
+    </div>
+    <script>
+      let device = [
+        {
+          id: "tablet",
+          name: "Tablet",
+          width: "900px",
+          priority: 0,
+        },
+        {
+          id: "tablet2",
+          name: "Tablet2",
+          width: "1800px",
+        },
+      ];
+      console.log("jhjx",[...device])
+      const editor = grapesjs.init({
+        // Indicate where to init the editor. You can also pass an HTMLElement
+        container: "#gjs",
+        deviceManager: {
+          devices: [...device],
+        },
+        // Get the content for the canvas directly from the element
+        // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
+        fromElement: true,
+        // Size of the editor
+        height: "300px",
+        width: "auto",
+        // Disable the storage manager for the moment
+        storageManager: false,
+        // Avoid any default panel
+        panels: { defaults: [] },
+      });
+      const deviceManager = window.editor.deviceManager;
+      console.log("desaz",deviceManager);
+      const device1 = deviceManager.add({
+        // Without an explicit ID, the `name` will be taken. In case of missing `name`, a random ID will be created.
+        id: "tablet",
+        name: "Tablet",
+        width: "900px", // This width will be applied on the canvas frame and for the CSS media
+      });
+      const device2 = deviceManager.add({
+        id: "tablet2",
+        name: "Tablet 2",
+        width: "800px", // This width will be applied on the canvas frame
+        widthMedia: "810px", // This width that will be used for the CSS media
+        height: "600px", // Height will be applied on the canvas frame
+      });
+    </script>
+  </body>
+</html>

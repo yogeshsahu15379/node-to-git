@@ -1,0 +1,31 @@
+uuid: 6c41dd24-c6f3-4f3e-a584-7ccdc8c7dbc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.contact_info.body
+    - node.type.contact_info
+  module:
+    - text
+    - user
+id: node.contact_info.teaser
+targetEntityType: node
+bundle: contact_info
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true

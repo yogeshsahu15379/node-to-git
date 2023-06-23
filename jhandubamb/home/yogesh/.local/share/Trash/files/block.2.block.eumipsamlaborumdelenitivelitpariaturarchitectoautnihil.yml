@@ -1,0 +1,25 @@
+uuid: 32e8d24a-033e-48ab-ad2b-87032323fe62
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:video_section:1fc135c2-8922-4065-b0b2-0251faef6bc9'
+  module:
+    - block_content
+  theme:
+    - delicious
+id: eumipsamlaborumdelenitivelitpariaturarchitectoautnihil
+theme: delicious
+region: primary_menu
+weight: -15
+provider: null
+plugin: 'block_content:1fc135c2-8922-4065-b0b2-0251faef6bc9'
+settings:
+  id: 'block_content:1fc135c2-8922-4065-b0b2-0251faef6bc9'
+  label: 'Eum ipsam laborum deleniti velit pariatur architecto aut nihil'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

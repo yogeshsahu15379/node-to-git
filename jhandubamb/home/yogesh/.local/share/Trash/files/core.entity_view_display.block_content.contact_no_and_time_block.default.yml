@@ -1,0 +1,32 @@
+uuid: 518cff62-4116-40e9-9f5d-357db516c9f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contact_no_and_time_block
+    - field.field.block_content.contact_no_and_time_block.field_opening_time_and_day
+    - field.field.block_content.contact_no_and_time_block.field_phone_number
+  module:
+    - text
+id: block_content.contact_no_and_time_block.default
+targetEntityType: block_content
+bundle: contact_no_and_time_block
+mode: default
+content:
+  field_opening_time_and_day:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_phone_number:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

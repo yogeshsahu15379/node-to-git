@@ -1,0 +1,60 @@
+import { html } from 'lit-html'
+import { Meta, Canvas, Story, Preview } from '@storybook/addon-docs/blocks'
+
+<Meta
+  title="Protons/Typefaces"
+  parameters={{
+    viewMode: 'docs',
+  }}
+/>
+
+# Typefaces
+
+The typefaces used within the AES brand.
+
+<Story name="Typefaces">
+  {() => html`
+    <div class="mb-10">
+      <div class="text-4xl font-display">Neue Haas Grotesk Display</div>
+      <code>.font-display</code>
+    </div>
+    <div class="mb-10">
+      <div class="text-xl font-body">Neue Haas Grotesk Text</div>
+      <code>.font-body</code>
+    </div>
+    <div class="mb-10">
+      <p>
+        For text in Bulgarian the font will fallback to Open Sans to render
+        Cyrillic characters
+      </p>
+      <div class="text-4xl font-display">
+        Спечелете по-големи ползи чрез споделените платформи и приложения
+      </div>
+      <code>.font-display (Cyrillic & Cyrillic Extended)</code>
+    </div>
+    <div class="mb-10">
+      <div class="text-xl font-body">
+        Чрез създаването на мащабни решения за чиста енергия, които обслужват
+        AES и нашите колеги в индустрията, можем да ускорим бъдещето на
+        енергията, заедно.
+      </div>
+      <code>.font-body (Cyrillic & Cyrillic Extended)</code>
+    </div>
+    <div class="mb-10">
+      <p>For text in Vietnamese the font will fallback to Open Sans</p>
+      <div class="text-4xl font-display">
+        LÝ DO BẠN NÊN CHỌN AES LÀM ĐỐI TÁC
+      </div>
+      <code>.font-display (Vietnamese)</code>
+    </div>
+    <div>
+      <div class="text-xl font-body">
+        AES tự hào mang đến các giải pháp tiên tiến nhất nhằm thúc đẩy và cải
+        tiến quá trình phát triển phẩm cũng như sản xuất công nghiệp, mang lại
+        cho doanh nghiệp những lợi ích to lớn, góp phần thúc đẩy phát triển nền
+        công nghiệp 4.0 tại Việt Nam.
+      </div>
+      <code>.font-body (Vietnamese)</code>
+    </div>
+  `}
+</Story>

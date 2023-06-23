@@ -1,0 +1,15 @@
+:host {
+  @apply block;
+}
+
+.button-text {
+  @apply hidden ml-3;
+
+  @screen xl {
+    @apply inline;
+  }
+}
+
+aes-icon {
+  @apply inline-block w-6;
+}

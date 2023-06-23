@@ -1,0 +1,22 @@
+uuid: 9dbed479-2628-4bf3-b5ab-758bd71707aa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - delicious
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: delicious_primary_local_tasks
+theme: delicious
+region: header
+weight: -11
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

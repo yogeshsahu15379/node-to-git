@@ -1,0 +1,40 @@
+:host {
+  display: block
+}
+
+:host([parallax]) figure {
+    height: 50vh;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0)
+  }
+
+@media (min-width: 1024px) {
+
+:host([parallax]) figure {
+      height: 25vw
+  }
+    }
+
+:host([parallax='false']) figure {
+    height: auto;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0)
+  }
+
+@media (min-width: 1024px) {
+
+:host([parallax='false']) figure {
+      height: auto
+  }
+    }
+
+figure {
+  display: block;
+  margin: 0;
+}
+
+::slotted([slot='caption']) {
+  font-family: neue-haas-grotesk-text, Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}

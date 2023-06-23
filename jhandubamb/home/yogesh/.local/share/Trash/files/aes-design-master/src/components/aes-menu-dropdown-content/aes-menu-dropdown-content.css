@@ -1,0 +1,30 @@
+:host {
+  @apply inline-flex;
+}
+
+.left,
+.right {
+  @apply flex-grow box-border w-72;
+}
+
+.left {
+  @apply block;
+
+  @screen lg {
+    @apply pl-12;
+  }
+}
+
+.right {
+  @apply hidden;
+
+  @screen lg {
+    @apply block ml-8 pl-8 block border-0 border-l border-solid border-neutrals-gray2;
+  }
+}
+
+::slotted(aes-submenu-title[slot='left']) {
+  @screen lg {
+    @apply transform -translate-x-12;
+  }
+}

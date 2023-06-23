@@ -1,0 +1,19 @@
+:host,
+.menu-link {
+  @apply inline-block;
+}
+
+.menu-link,
+a {
+  @apply text-neutrals-black no-underline py-2 text-xl;
+}
+
+:host([active]) a,
+.menu-link.active {
+  @apply text-signature-blue1 border-0 border-b-2 border-solid border-signature-blue1;
+}
+
+a:hover,
+.menu-link:hover {
+  @apply text-signature-blue1;
+}

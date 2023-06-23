@@ -1,0 +1,33 @@
+uuid: de9b0554-5214-4e56-8aae-be404d449094
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.map_section.body
+    - field.field.node.map_section.field_map
+    - node.type.map_section
+  module:
+    - text
+    - user
+id: node.map_section.teaser
+targetEntityType: node
+bundle: map_section
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  field_map: true

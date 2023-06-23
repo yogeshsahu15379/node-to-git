@@ -1,0 +1,112 @@
+:host {
+  @apply block bg-neutrals-white;
+  box-shadow: -4px 0px 24px 2px rgba(0, 0, 0, 0.06);
+}
+
+button {
+  @apply bg-transparent border-none;
+}
+
+.wrapper {
+  @apply h-20 flex items-center px-6;
+}
+
+::slotted([slot='logo']) {
+  @apply block relative mr-8 z-40 flex-grow;
+
+  @screen lg {
+    @apply flex-none;
+  }
+}
+
+.menu-open {
+  @apply -mr-4;
+}
+
+.menu-close {
+  @apply absolute top-0 right-0 p-2;
+}
+
+.menu-open,
+.menu-close {
+  @screen lg {
+    @apply hidden;
+  }
+}
+
+aes-icon {
+  @apply inline-block w-6;
+}
+
+aes-logo {
+  @apply inline-block;
+}
+
+.search-open {
+  @apply hidden;
+
+  @screen lg {
+    @apply block -mr-4;
+  }
+}
+
+.overlay {
+  @apply absolute z-30 inset-0 bg-neutrals-gray1 hidden;
+
+  @screen lg {
+    @apply block relative bg-transparent flex-grow;
+  }
+}
+
+.overlay.open {
+  @apply block max-h-screen;
+}
+
+.nav-wrapper {
+  @apply box-border relative pt-20 px-10 h-full;
+
+  @screen lg {
+    @apply pt-0 px-0;
+  }
+}
+
+.nav-scrollable {
+  /* Scrollable open menu */
+  @apply h-full overflow-y-auto overflow-x-hidden;
+
+  /* Allow dropdowns to appears on desktop */
+  @screen lg {
+    @apply overflow-visible;
+  }
+}
+
+.search {
+  @apply my-4;
+
+  @screen lg {
+    @apply hidden absolute left-0 z-20 w-full transform -translate-y-1/2;
+    top: 50%;
+  }
+}
+
+.search.open {
+  @screen lg {
+    @apply block;
+  }
+}
+
+ul {
+  @apply flex flex-col list-none m-0 p-0;
+
+  @screen lg {
+    @apply flex-row;
+  }
+}
+
+::slotted(li) {
+  @apply text-xl my-4;
+
+  @screen lg {
+    @apply text-base mx-6 my-0;
+  }
+}

@@ -1,0 +1,24 @@
+uuid: 38e08c18-0272-41b0-8cf7-8589ba889b0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.hero_slider
+  module:
+    - views
+  theme:
+    - delicious
+id: views_block__hero_slider_block_1
+theme: delicious
+region: secondary_menu
+weight: -14
+provider: null
+plugin: 'views_block:hero_slider-block_1'
+settings:
+  id: 'views_block:hero_slider-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

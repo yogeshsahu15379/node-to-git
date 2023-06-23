@@ -1,0 +1,7 @@
+:host {
+  @apply flex items-center;
+}
+
+.media-link-icon {
+  @apply w-10 flex-shrink-0 mr-4;
+}

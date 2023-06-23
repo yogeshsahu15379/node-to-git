@@ -1,0 +1,121 @@
+#block-views-block-our-menu-block-1{
+    width:100vw;
+    text-align: center;
+}
+#block-views-block-our-menu-block-1 .content{
+    width:70vw;
+    margin: auto;
+}
+#block-views-block-our-menu-block-1 h2{
+    font-family: myfont;
+    font-size: 32px;
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#block-views-block-our-menu-block-1 .view-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.menu_content{
+    display: flex;
+    justify-content: space-between;
+}
+.menu_content .name{
+    color: #ffbf00;
+    font-weight: 600;
+    font-size: 18px;
+}
+.menu_content .price{
+    position:  relative;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444444;
+}
+
+.text{
+    font-size: 15px;
+    text-align: left;
+}
+.our_menu{
+    padding:10px 30px;
+}
+#views-exposed-form-our-menu-block-1{
+    text-align: center;
+    box-shadow: none;
+    
+}
+.bef-exposed-form .form--inline > .form-item{
+    float: none;
+}
+#views-exposed-form-our-menu-block-1 ul{
+    display: flex;
+text-decoration: none;
+list-style: none;
+justify-content: center;
+gap: 20px;
+}
+
+#views-exposed-form-our-menu-block-1 label{
+ display: none;
+
+}
+#views-exposed-form-our-menu-block-1 .view-filters,
+#views-exposed-form-our-menu-block-1{
+    margin-top: 0;
+    padding: 0;
+}
+
+#views-exposed-form-our-menu-block-1 ul li{
+    border: none;
+    background-color: transparent;
+    border:2px solid #ffb03b;
+    background: transparent;
+    border-radius: 30px;
+    margin: 0 15px;
+}
+#views-exposed-form-our-menu-block-1 ul li:hover{
+    background-color: #ffb03b;
+    transition: 0.5s;
+}
+#views-exposed-form-our-menu-block-1 ul li:hover a{
+    color:aliceblue;
+    transition: 0.3s;
+}
+
+#views-exposed-form-our-menu-block-1 ul li a{
+    color: black;
+    border: none;   
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: capitalize;
+}
+#edit-submit-our-menu{
+    display: none;
+}
+@media screen and (min-width: 0px) and (max-width: 991px) {
+    #block-views-block-our-menu-block-1 .content{
+        width:90vw;
+        margin: auto;
+    }
+    #block-views-block-our-menu-block-1 .view-content{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #views-exposed-form-our-menu-block-1 ul{
+   
+    justify-content: center;
+    gap: 10px ;
+    }
+    #views-exposed-form-our-menu-block-1 ul li{
+        margin:0;
+    }
+    #views-exposed-form-our-menu-block-1 ul li a{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+
+

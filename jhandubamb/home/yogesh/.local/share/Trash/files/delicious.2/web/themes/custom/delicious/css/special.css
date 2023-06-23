@@ -1,0 +1,108 @@
+#special{
+    display: flex;
+    align-items: center;
+    /* width:60%; */
+}
+.special_label{
+    font-size: 2.3rem;
+    font-family: myfont;
+}
+
+.special_image img{
+    width: 300px;
+    height: 300px;
+}
+.special_body{
+    font-size: 1.1rem;
+    color: rgba(68, 68, 68, 0.787);
+    
+}
+.special_text{
+    width: 65%;
+    padding-left: 30px ;
+}
+#block-views-block-check-our-specials-block-1{
+    width: 100vw;
+    margin-top: 70px;
+}
+#block-views-block-check-our-specials-block-1 .content{
+    width: 70%;
+    margin: auto;
+}
+#block-views-block-check-our-specials-block-1 .view-check-our-specials{
+    display: flex;
+}
+#block-views-block-check-our-specials-block-1 .view-filters{
+width: 40%;
+margin: auto;
+}
+#block-views-block-check-our-specials-block-1 form{
+    box-shadow: none;
+    padding: 0;
+    margin-top: 0;
+}
+#block-views-block-check-our-specials-block-1 .view-filters li{
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#block-views-block-check-our-specials-block-1 .view-filters li:first-child,
+#block-views-block-check-our-specials-block-1 .view-filters label{
+    display: none;
+}
+#block-views-block-check-our-specials-block-1 .view-filters li a{
+    font-size: 18px;
+    border-bottom: none;
+    color: rgb(29, 28, 28);
+    /* font-weight: 600; */
+    font-weight: bold;
+}
+#block-views-block-check-our-specials-block-1 .view-filters li a:hover{
+    color: #ffb03b;
+}
+#block-views-block-check-our-specials-block-1 .view-filters ul{
+    /* border-left: 3px solid; */
+    border-right:2px solid #dee2e6;
+}
+#block-views-block-check-our-specials-block-1 h2{
+    font-size: 36px;
+    text-align: center;
+    font-family: myfont;
+    color:#ffb03b;
+}
+#edit-submit-check-our-specials{
+    display: none;
+}
+@media screen and (min-width: 0px) and (max-width: 991px) {
+    
+    #block-views-block-check-our-specials-block-1 .content{
+        width: 90vw;
+        margin: auto;
+    }
+    #block-views-block-check-our-specials-block-1 .view-check-our-specials{
+        display: block;
+    }
+    #special{
+        display: block;
+        align-items: center;
+    }
+    .special_text{
+        width: 90vw;
+        padding-left: 0px ;
+    }
+    #block-views-block-check-our-specials-block-1 .view-filters{
+        width: 90vw;
+        margin: auto;
+    }
+    .special_image img{
+        width: 80%;
+        height: auto;
+    }
+    .special_image{
+        width: 90vw;
+        text-align: center;
+    }
+    #block-views-block-check-our-specials-block-1 .view-filters li a:hover{
+        color: #ffb03b;
+    }
+}

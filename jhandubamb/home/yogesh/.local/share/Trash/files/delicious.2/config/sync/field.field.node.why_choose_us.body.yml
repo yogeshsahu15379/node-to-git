@@ -1,0 +1,23 @@
+uuid: a55ef741-1dd6-43d8-83df-41679c5146a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.why_choose_us
+  module:
+    - text
+id: node.why_choose_us.body
+field_name: body
+entity_type: node
+bundle: why_choose_us
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,66 @@
+/**
+ * @TODO: Line heights for each. Reach for the `leading-` classes for this, not
+ * exact rem/px values please.
+ *
+ * Ref: https://www.figma.com/file/rgt4xGUPIXGhAzJulrLskn/AES?node-id=34%3A3
+ */
+
+@layer components {
+  .heading {
+    @apply block font-light leading-tight font-display;
+  }
+  .heading-1 {
+    @apply text-4xl;
+
+    @screen lg {
+      @apply text-8xl leading-none font-thin; /* Figma: 104px */
+    }
+  }
+  .heading-2 {
+    @apply text-3xl;
+
+    @screen lg {
+      @apply text-7xl leading-none; /* Figma: 88px */
+    }
+  }
+  .heading-3 {
+    @apply text-3xl;
+
+    @screen lg {
+      @apply text-6xl leading-tight; /* Figma: 72px */
+    }
+  }
+  .heading-4 {
+    @apply text-3xl;
+
+    @screen lg {
+      @apply text-5xl leading-tight; /* Figma: 56px */
+    }
+  }
+
+  /**
+   * Subheadlines. All are the same size at mobile.
+   */
+  .subheadline {
+    @apply block font-display leading-tight;
+  }
+  .subheadline-1 {
+    @apply text-2xl;
+
+    @screen lg {
+      @apply text-4xl;
+    }
+  }
+  .subheadline-2 {
+    @apply text-2xl;
+    @screen lg {
+      @apply text-3xl;
+    }
+  }
+  .subheadline-3 {
+    @apply text-2xl;
+    @screen lg {
+      @apply text-2xl;
+    }
+  }
+}
